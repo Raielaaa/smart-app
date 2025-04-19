@@ -3,6 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+
+    <!-- Information Carousel -->
     <string name="carousel_first_page_header">Enhanced Collaboration</string>
     <string name="carousel_first_page_subheader">Foster better communication between students, staff, and maintenance teams for effective problem-solving.</string>
 
@@ -21,11 +23,13 @@
     <string name="carousel_sixth_page_header">Data-Driven Insights</string>
     <string name="carousel_sixth_page_subheader">Utilize reports and analytics to identify recurring issues and prioritize maintenance tasks efficiently.</string>
 
+    <!-- Home Account -->
     <string name="home_account_header">Let\'s start!</string>
     <string name="home_account_subheader">Welcome! What would you like to do?</string>
     <string name="home_account_sign_in_button">Sign in now</string>
     <string name="home_account_no_account">New to the app? Register now</string>
-    
+
+    <!-- Login -->
     <string name="login_header">Welcome Back!</string>
     <string name="login_subheader">Sign to your account</string>
     <string name="login_email">Email</string>
@@ -38,7 +42,7 @@
     <string name="login_google"> Sign in with Google</string>
     <string name="login_no_account_1">Don\'t have an account? Register now!</string>
     <string name="login_no_account_2"> Register now!</string>
-    
+
     <string name="login_get_started">Get Started</string>
     <string name="login_student">Student</string>
     <string name="login_student_info">Report facility issues for a safer environment.</string>
@@ -46,7 +50,8 @@
     <string name="login_teacher_info">Ensure classroom facilities remain functional and safe.</string>
     <string name="login_staff">Maintenance Staff</string>
     <string name="login_staff_info">Track and resolve reported facility issues quickly.</string>
-    
+
+    <!-- Register -->
     <string name="register_header">Hello There!</string>
     <string name="register_subheader">Sign up new account</string>
     <string name="register_first_name">First name</string>
@@ -61,5 +66,77 @@
         By tapping Next, you are agreeing to SMART\'s Terms and Conditions and are acknowledging our Privacy Notice applies.
     </string>
     <string name="register_next">Next</string>
+
+    <string name="register_pass_header">Almost there!</string>
+    <string name="register_pass_subheader">Sign up new account</string>
+    <string name="register_pass_email">Email</string>
+    <string name="register_pass_email_label">Your email</string>
+    <string name="register_pass_pass">Password</string>
+    <string name="register_pass_label">Your password</string>
+    <string name="register_pass_confirm">Confirm password</string>
+    <string name="register_pass_next">Next</string>
+
+    <!-- Terms and Conditions -->
+    <string name="terms_conditions_header">Terms of Use</string>
+    <string name="terms_condition_app_name">SMART FACILITY MAINTENANCE APP</string>
+    <string name="terms_conditions_accept">Accept</string>
+    <string name="terms_conditions_decline">Decline</string>
+
+    <string name="terms_conditions_1.1">
+        1. Your acceptance of these Terms
+    </string>
+        <string name="terms_conditions_1">
+        1.1     By using, visiting, accessing, and/or registering with the app (including all content available through the app), you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree, please do not use the app.
+
+        \n\n1.2     We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting in the app.
+
+        \n\n1.3     These Terms apply to all users of the app, including maintenance staff, students, and admin/teachers.
+    </string>
+        <string name="terms_conditions_2.1">
+        2. Access and Use of this App
+    </string>
+        <string name="terms_conditions_2">
+        2.1     We grant you permission to use the app in accordance with these Terms, provided that: (a) it is for your designated role use only (Maintenance Staff, Student, Admin/Teacher), (b) you will not copy or redistribute content without permission, © you will not modify the app beyond its intended use, and (d) you comply with these Terms.
+    </string>
+        <string name="terms_conditions_3.1">
+        3. Your obligations
+    </string>
+        <string name="terms_conditions_3">
+        3.1     You must use the app legally and follow all applicable laws.
+
+        \n\n3.2     Do not upload or transmit harmful code such as viruses or malware.
+
+        \n\n3.3     Do not post or share inappropriate content, including offensive or unlawful material.
+
+        \n\n3.4     Do not engage in any activity that disrupts or harms the functionality of the app.
+
+        \n\n3.5     Do not gather personal information from others or use the app for commercial solicitation.
+
+        \n\n3.6     Do not infringe upon the rights of others, including intellectual property rights.
+
+        \n\n3.7     Any disputes arising between users must be handled independently. If inappropriate content is reported, we may take necessary action including content removal or user suspension.
+
+        \n\n3.8     All intellectual property within the app belongs to us and our licensors. You may not infringe these rights.
+    </string>
+        <string name="terms_conditions_4.1">
+        4. Third Party Links
+    </string>
+        <string name="terms_conditions_4">
+        4.1     We may include links to external resources. We are not responsible for their availability, content, or any issues resulting from their use.
+    </string>
+        <string name="terms_conditions_5.1">
+        5. Data Protection
+    </string>
+        <string name="terms_conditions_5">
+        5.1     We comply with applicable data protection laws.
+
+        \n\n5.2     We may disclose personal information if legally required to do so or if requested by authorized parties.
+
+        \n\n5.3     We may report to authorities if illegal activity is suspected.
+
+        \n\n5.4     If you opt in, we may share your information with partner organizations for legitimate purposes.
+
+        \n\n5.5     We may store and use your data for internal app functionality, including secure access to protected areas.
+    </string>
 
 </resources>

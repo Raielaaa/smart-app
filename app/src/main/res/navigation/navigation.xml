@@ -137,5 +137,17 @@
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.smart.ui.account.register.RegisterFragment"
-        android:label="RegisterFragment" />
+        android:label="RegisterFragment" >
+        <action
+            android:id="@+id/action_registerFragment_to_registerPasswordFragment"
+            app:destination="@id/registerPasswordFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerPasswordFragment"
+        android:name="com.example.smart.ui.account.register.RegisterPasswordFragment"
+        android:label="RegisterPasswordFragment" />
 </navigation>
