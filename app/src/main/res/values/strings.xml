@@ -19,6 +19,10 @@
     <string name="carousel_fifth_page_subheader">Ensure that only authorized users can report and view facility concerns, protecting data and privacy.</string>
 
     <string name="carousel_sixth_page_header">Data-Driven Insights</string>
-    <string name="carousel_sixth_page_subheader">Utilize reports and analytics to identify recurring issues and prioritize maintenance tasks efficiently.
-</string>
+    <string name="carousel_sixth_page_subheader">Utilize reports and analytics to identify recurring issues and prioritize maintenance tasks efficiently.</string>
+
+    <string name="home_account_header">Let\'s start!</string>
+    <string name="home_account_subheader">Welcome! What would you like to do?</string>
+    <string name="home_account_sign_in_button">Sign in now</string>
+    <string name="home_account_no_account">New to the app? Register now</string>
 </resources>
