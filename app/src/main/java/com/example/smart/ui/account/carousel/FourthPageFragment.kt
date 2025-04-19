@@ -5,14 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.smart.R
+import com.example.smart.databinding.FragmentFourthPageBinding
 
 class FourthPageFragment : Fragment() {
+    private lateinit var binding: FragmentFourthPageBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fourth_page, container, false)
+    ): View {
+        binding = FragmentFourthPageBinding.inflate(inflater, container, false)
+
+        binding.apply {
+            cvNext.setOnClickListener {
+                findNavController().navigate(R.id.action_fourthPageFragment_to_fifthPageFragment)
+            }
+        }
+
+        return binding.root
     }
 }

@@ -5,14 +5,25 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.example.smart.R
+import com.example.smart.databinding.FragmentFirstPageBinding
 
 class FirstPageFragment : Fragment() {
+    private lateinit var binding: FragmentFirstPageBinding
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_first_page, container, false)
+    ): View {
+        binding = FragmentFirstPageBinding.inflate(inflater, container, false)
+
+        binding.apply {
+            cvNext.setOnClickListener {
+                findNavController().navigate(R.id.action_firstPageFragment_to_secondPageFragment)
+            }
+        }
+
+        return binding.root
     }
 }

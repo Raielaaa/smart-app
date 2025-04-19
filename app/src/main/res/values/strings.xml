@@ -2,4 +2,23 @@
     <string name="app_name">smart</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="carousel_first_page_header">Enhanced Collaboration</string>
+    <string name="carousel_first_page_subheader">Foster better communication between students, staff, and maintenance teams for effective problem-solving.</string>
+
+    <string name="carousel_second_page_header">Real-Time Updates</string>
+    <string name="carousel_second_page_subheader">Stay informed with instant updates on the status of maintenance requests and reported concerns.</string>
+
+    <string name="carousel_third_page_header">Efficient Reporting</string>
+    <string name="carousel_third_page_subheader">Simplify how facility issues are reported, ensuring faster acknowledgment and quicker resolutions.</string>
+
+    <string name="carousel_fourth_page_header">Optimized Monitoring</string>
+    <string name="carousel_fourth_page_subheader">Use technology to monitor facility conditions more effectively, reducing overlooked issues.</string>
+
+    <string name="carousel_fifth_page_header">Secure Access</string>
+    <string name="carousel_fifth_page_subheader">Ensure that only authorized users can report and view facility concerns, protecting data and privacy.</string>
+
+    <string name="carousel_sixth_page_header">Data-Driven Insights</string>
+    <string name="carousel_sixth_page_subheader">Utilize reports and analytics to identify recurring issues and prioritize maintenance tasks efficiently.
+</string>
 </resources>

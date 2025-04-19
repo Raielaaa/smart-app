@@ -74,5 +74,14 @@
         android:id="@+id/sixthPageFragment"
         android:name="com.example.smart.ui.account.carousel.SixthPageFragment"
         android:label="fragment_sixth_page"
-        tools:layout="@layout/fragment_sixth_page" />
+        tools:layout="@layout/fragment_sixth_page" >
+        <action
+            android:id="@+id/action_sixthPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeAccountFragment"
+        android:name="com.example.smart.ui.account.login.HomeAccountFragment"
+        android:label="fragment_home_account"
+        tools:layout="@layout/fragment_home_account" />
 </navigation>

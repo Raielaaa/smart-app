@@ -43,6 +43,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -59,10 +62,6 @@ dependencies {
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    //  QR code scanner
-    implementation("com.google.mlkit:barcode-scanning:17.1.0")
-    implementation("com.google.android.gms:play-services-mlkit-barcode-scanning:18.2.0")
 
     //  Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
