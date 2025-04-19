@@ -22,6 +22,9 @@ class FirstPageFragment : Fragment() {
             cvNext.setOnClickListener {
                 findNavController().navigate(R.id.action_firstPageFragment_to_secondPageFragment)
             }
+            tvSkip.setOnClickListener {
+                findNavController().navigate(R.id.action_firstPageFragment_to_homeAccountFragment)
+            }
         }
 
         return binding.root

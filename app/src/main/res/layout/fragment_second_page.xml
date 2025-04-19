@@ -37,7 +37,7 @@
                 android:textSize="@dimen/_14ssp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/carousel_first_page_header" />
+                android:text="@string/carousel_second_page_header" />
 
             <TextView
                 android:id="@+id/textView2"
@@ -45,7 +45,7 @@
                 android:fontFamily="@font/poppins"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/carousel_first_page_subheader" />
+                android:text="@string/carousel_second_page_subheader" />
 
             <LinearLayout
                 android:layout_marginTop="@dimen/_20sdp"

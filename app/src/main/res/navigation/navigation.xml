@@ -17,6 +17,9 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_firstPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/secondPageFragment"
@@ -30,6 +33,9 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_secondPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/thirdPageFragment"
@@ -43,6 +49,9 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_thirdPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/fourthPageFragment"
@@ -56,6 +65,9 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_fourthPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/fifthPageFragment"
@@ -69,6 +81,9 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_fifthPageFragment_to_homeAccountFragment"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/sixthPageFragment"
@@ -82,10 +97,45 @@
             app:exitAnim="@anim/push_left_out"
             app:popEnterAnim="@anim/push_right_in"
             app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_sixthPageFragment_to_homeAccountFragment2"
+            app:destination="@id/homeAccountFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeAccountFragment"
         android:name="com.example.smart.ui.account.login.HomeAccountFragment"
         android:label="fragment_home_account"
-        tools:layout="@layout/fragment_home_account" />
+        tools:layout="@layout/fragment_home_account" >
+        <action
+            android:id="@+id/action_homeAccountFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out"  />
+        <action
+            android:id="@+id/action_homeAccountFragment_to_registerFragment"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.smart.ui.account.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out"
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.smart.ui.account.register.RegisterFragment"
+        android:label="RegisterFragment" />
 </navigation>

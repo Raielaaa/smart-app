@@ -22,6 +22,9 @@ class SixthPageFragment : Fragment() {
             cvNext.setOnClickListener {
                 findNavController().navigate(R.id.action_sixthPageFragment_to_homeAccountFragment)
             }
+            tvSkip.setOnClickListener {
+                findNavController().navigate(R.id.action_sixthPageFragment_to_homeAccountFragment)
+            }
         }
 
         return binding.root

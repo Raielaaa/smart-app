@@ -25,4 +25,41 @@
     <string name="home_account_subheader">Welcome! What would you like to do?</string>
     <string name="home_account_sign_in_button">Sign in now</string>
     <string name="home_account_no_account">New to the app? Register now</string>
+    
+    <string name="login_header">Welcome Back!</string>
+    <string name="login_subheader">Sign to your account</string>
+    <string name="login_email">Email</string>
+    <string name="login_email_label">Your email</string>
+    <string name="login_password">Password</string>
+    <string name="login_password_label">Your password</string>
+    <string name="login_user_option">Not a student? Click here</string>
+    <string name="login_login">Login</string>
+    <string name="login_or">Or</string>
+    <string name="login_google"> Sign in with Google</string>
+    <string name="login_no_account_1">Don\'t have an account? Register now!</string>
+    <string name="login_no_account_2"> Register now!</string>
+    
+    <string name="login_get_started">Get Started</string>
+    <string name="login_student">Student</string>
+    <string name="login_student_info">Report facility issues for a safer environment.</string>
+    <string name="login_teacher">Teacher</string>
+    <string name="login_teacher_info">Ensure classroom facilities remain functional and safe.</string>
+    <string name="login_staff">Maintenance Staff</string>
+    <string name="login_staff_info">Track and resolve reported facility issues quickly.</string>
+    
+    <string name="register_header">Hello There!</string>
+    <string name="register_subheader">Sign up new account</string>
+    <string name="register_first_name">First name</string>
+    <string name="register_first_name_label">Your first name</string>
+    <string name="register_last_name">Last name</string>
+    <string name="register_last_name_label">Last name label</string>
+    <string name="register_role">Role</string>
+    <string name="register_student">STUDENT</string>
+    <string name="register_teacher">TEACHER</string>
+    <string name="register_staff">STAFF</string>
+    <string name="register_terms_condition">
+        By tapping Next, you are agreeing to SMART\'s Terms and Conditions and are acknowledging our Privacy Notice applies.
+    </string>
+    <string name="register_next">Next</string>
+
 </resources>
