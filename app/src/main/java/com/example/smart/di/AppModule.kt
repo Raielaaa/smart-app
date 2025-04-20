@@ -5,6 +5,9 @@ import com.example.smart.utils.Constants
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -37,4 +40,34 @@ object AppModule {
 
         return GoogleSignIn.getClient(context, gso)
     }
+
+    /**
+     * Provides a singleton instance of Firebase Authentication
+     * @param
+     * @return Firebase Authentication Instance
+     */
+    @Singleton
+    @Provides
+    @Named("FirebaseAuth.Instance")
+    fun provideFirebaseAuthInstance() = FirebaseAuth.getInstance()
+
+    /**
+     * Provides a singleton instance of Firebase FireStore
+     * @param
+     * @return Firebase FireStore Instance
+     */
+    @Singleton
+    @Provides
+    @Named("FirebaseFireStore.Instance")
+    fun provideFirebaseFirebaseFireStoreInstance() = FirebaseFirestore.getInstance()
+
+    /**
+     * Provides a singleton instance of Firebase Storage
+     * @param
+     * @return Firebase Storage Instance
+     */
+    @Singleton
+    @Provides
+    @Named("FirebaseStorage.Instance")
+    fun provideFirebaseStorageInstance() = FirebaseStorage.getInstance().reference
 }

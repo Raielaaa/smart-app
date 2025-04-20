@@ -109,7 +109,7 @@
                     android:fontFamily="@font/poppins"
                     android:text="Skip"
                     android:textColor="@color/main_color"
-                    android:textSize="@dimen/_8ssp"
+                    android:textSize="@dimen/_10ssp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"

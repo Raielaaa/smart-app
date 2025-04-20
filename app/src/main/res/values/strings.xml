@@ -45,7 +45,9 @@
 
     <string name="login_get_started">Get Started</string>
     <string name="login_student">Student</string>
-    <string name="login_student_info">Report facility issues for a safer environment.</string>
+    <string name="login_student_officer">Officer</string>
+    <string name="login_student_info">View facility issues for awareness.</string>
+    <string name="login_officer_info">Report facility issues for awareness.</string>
     <string name="login_teacher">Teacher</string>
     <string name="login_teacher_info">Ensure classroom facilities remain functional and safe.</string>
     <string name="login_staff">Maintenance Staff</string>
@@ -85,23 +87,23 @@
     <string name="terms_conditions_1.1">
         1. Your acceptance of these Terms
     </string>
-        <string name="terms_conditions_1">
+    <string name="terms_conditions_1">
         1.1     By using, visiting, accessing, and/or registering with the app (including all content available through the app), you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy. If you do not agree, please do not use the app.
 
         \n\n1.2     We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting in the app.
 
         \n\n1.3     These Terms apply to all users of the app, including maintenance staff, students, and admin/teachers.
     </string>
-        <string name="terms_conditions_2.1">
+    <string name="terms_conditions_2.1">
         2. Access and Use of this App
     </string>
-        <string name="terms_conditions_2">
+    <string name="terms_conditions_2">
         2.1     We grant you permission to use the app in accordance with these Terms, provided that: (a) it is for your designated role use only (Maintenance Staff, Student, Admin/Teacher), (b) you will not copy or redistribute content without permission, © you will not modify the app beyond its intended use, and (d) you comply with these Terms.
     </string>
-        <string name="terms_conditions_3.1">
+    <string name="terms_conditions_3.1">
         3. Your obligations
     </string>
-        <string name="terms_conditions_3">
+    <string name="terms_conditions_3">
         3.1     You must use the app legally and follow all applicable laws.
 
         \n\n3.2     Do not upload or transmit harmful code such as viruses or malware.
@@ -118,16 +120,16 @@
 
         \n\n3.8     All intellectual property within the app belongs to us and our licensors. You may not infringe these rights.
     </string>
-        <string name="terms_conditions_4.1">
+    <string name="terms_conditions_4.1">
         4. Third Party Links
     </string>
-        <string name="terms_conditions_4">
+    <string name="terms_conditions_4">
         4.1     We may include links to external resources. We are not responsible for their availability, content, or any issues resulting from their use.
     </string>
-        <string name="terms_conditions_5.1">
+    <string name="terms_conditions_5.1">
         5. Data Protection
     </string>
-        <string name="terms_conditions_5">
+    <string name="terms_conditions_5">
         5.1     We comply with applicable data protection laws.
 
         \n\n5.2     We may disclose personal information if legally required to do so or if requested by authorized parties.

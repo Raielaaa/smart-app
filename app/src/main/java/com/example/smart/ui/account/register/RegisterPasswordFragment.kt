@@ -22,7 +22,7 @@ class RegisterPasswordFragment : Fragment() {
         binding = FragmentRegisterPasswordBinding.inflate(inflater, container, false)
 
         binding.apply {
-            cvLogin.setOnClickListener {
+            cvNext.setOnClickListener {
                 TermsOfServiceDialog(
                     this@RegisterPasswordFragment,
                     viewModel,

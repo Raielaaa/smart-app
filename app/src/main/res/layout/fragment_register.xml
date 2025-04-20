@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView6" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/etFirstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
@@ -75,10 +75,10 @@
         android:text="@string/register_last_name"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+        app:layout_constraintTop_toBottomOf="@+id/etFirstName" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress2"
+        android:id="@+id/etLastName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
@@ -103,18 +103,19 @@
         android:text="@string/register_role"
         android:textSize="@dimen/_10ssp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress2" />
+        app:layout_constraintTop_toBottomOf="@+id/etLastName" />
 
-    <EditText
-        android:id="@+id/editTextTextEmailAddress20"
+    <AutoCompleteTextView
+        android:id="@+id/dropdownRole"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_5sdp"
         android:background="@drawable/account_input_background"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="@string/register_student"
-        android:inputType="text"
+        android:hint="Select Role"
+        android:inputType="none"
+        android:focusable="false"
         android:paddingHorizontal="@dimen/_15sdp"
         android:paddingVertical="@dimen/_10sdp"
         android:textSize="@dimen/_8ssp"
@@ -132,10 +133,10 @@
         android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress20" />
+        app:layout_constraintTop_toBottomOf="@+id/dropdownRole" />
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cvLogin"
+        android:id="@+id/cvNext"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_70sdp"
