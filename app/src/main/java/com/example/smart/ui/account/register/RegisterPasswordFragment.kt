@@ -29,6 +29,9 @@ class RegisterPasswordFragment : Fragment() {
                     binding
                 ).show(this@RegisterPasswordFragment.parentFragmentManager, "Register_BottomDialog")
             }
+            ivBackButtonRegisterPass.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
 
         return binding.root

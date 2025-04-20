@@ -24,6 +24,9 @@ class RegisterFragment : Fragment() {
             cvLogin.setOnClickListener {
                 findNavController().navigate(R.id.action_registerFragment_to_registerPasswordFragment)
             }
+            ivBackButtonRegister.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
 
         return binding.root

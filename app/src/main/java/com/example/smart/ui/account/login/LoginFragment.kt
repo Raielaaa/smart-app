@@ -64,6 +64,9 @@ class LoginFragment : Fragment() {
                     googleSignInLauncher.launch(signInIntent)
                 }
             }
+            ivBackButtonLogin.setOnClickListener {
+                findNavController().popBackStack()
+            }
         }
 
         return binding.root
