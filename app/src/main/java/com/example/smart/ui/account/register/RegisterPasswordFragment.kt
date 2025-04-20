@@ -11,7 +11,9 @@ import com.example.lab_ass_app.ui.account.register.TermsOfServiceDialog
 import com.example.smart.R
 import com.example.smart.databinding.FragmentRegisterPasswordBinding
 import com.example.smart.utils.ShowInfoDialogFragment
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class RegisterPasswordFragment : Fragment() {
     private val viewModel: RegisterPasswordViewModel by viewModels()
     private lateinit var binding: FragmentRegisterPasswordBinding
@@ -42,11 +44,26 @@ class RegisterPasswordFragment : Fragment() {
                     etConfirmPasswordRegister.setText("")
                     etPasswordRegister.setText("")
                 } else {
-                    TermsOfServiceDialog(
-                        this@RegisterPasswordFragment,
-                        viewModel,
-                        binding
-                    ).show(this@RegisterPasswordFragment.parentFragmentManager, "Register_BottomDialog")
+                    val userData = arguments?.getSerializable("userData") as? HashMap<String, String>
+                    if (userData != null) {
+                        val completeInfo = hashMapOf(
+                            "firstName" to userData["firstName"],
+                            "lastName" to userData["lastName"],
+                            "role" to userData["role"],
+                            "email" to email,
+                            "password" to password
+                        )
+
+                        TermsOfServiceDialog(
+                            this@RegisterPasswordFragment,
+                            viewModel,
+                            binding,
+                            completeInfo
+                        ).show(this@RegisterPasswordFragment.parentFragmentManager, "Register_BottomDialog")
+                    } else {
+                        ShowInfoDialogFragment("Warning", "There's an error retrieving user information, please try again.")
+                            .show(parentFragmentManager, "warning_dialog")
+                    }
                 }
             }
             ivBackButtonRegisterPass.setOnClickListener {

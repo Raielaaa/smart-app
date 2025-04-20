@@ -67,7 +67,21 @@ class RegisterFragment : Fragment() {
                     val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
                     dialog.show(parentFragmentManager, "warning_dialog")
                 } else {
-                    findNavController().navigate(R.id.action_registerFragment_to_registerPasswordFragment)
+                    //  store the values in a hashmap then pass it to the next fragment
+                    val userData = hashMapOf(
+                        "firstName" to firstName,
+                        "lastName" to lastName,
+                        "role" to selectedRole.lowercase()
+                    )
+
+                    //  serialize the hashmap into a bundle
+                    val bundle = Bundle()
+                    bundle.putSerializable("userData", userData)
+
+                    findNavController().navigate(
+                        R.id.action_registerFragment_to_registerPasswordFragment,
+                        bundle
+                    )
                 }
             }
             ivBackButtonRegister.setOnClickListener {

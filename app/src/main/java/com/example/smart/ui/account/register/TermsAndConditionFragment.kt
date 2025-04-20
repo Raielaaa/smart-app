@@ -16,7 +16,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 class TermsOfServiceDialog(
     private val hostFragment: RegisterPasswordFragment,
     private val registerViewModel: RegisterPasswordViewModel,
-    private val registerBinding: FragmentRegisterPasswordBinding
+    private val registerBinding: FragmentRegisterPasswordBinding,
+    private val completeInfo: HashMap<String, String?>
 ) : BottomSheetDialogFragment() {
 
     // View Binding
@@ -41,18 +42,14 @@ class TermsOfServiceDialog(
         binding.apply {
             // Accept button click listener
             btnAccept.setOnClickListener {
-                // Insert user data to Firebase FireStore and navigate to the next screen
-//                registerViewModel.insertDataToAuth(
-//                    registerBinding.etLRN.text.toString(),
-//                    registerBinding.etEmail.text.toString(),
-//                    registerBinding.tilPassword.text.toString(),
-//                    registerBinding.spUserRegister.selectedItem.toString(),
-//                    hostFragment
-//                )
-
                 // Dismiss the dialog
-                findNavController().navigate(R.id.action_registerPasswordFragment_to_loginFragment)
                 this@TermsOfServiceDialog.dismiss()
+
+                // Insert user data to Firebase FireStore and navigate to the next screen
+                registerViewModel.uploadUserDataToFireStore(
+                    completeInfo,
+                    hostFragment
+                )
             }
 
             // Decline button click listener

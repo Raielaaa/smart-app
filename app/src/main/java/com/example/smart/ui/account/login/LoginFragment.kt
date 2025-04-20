@@ -88,7 +88,11 @@ class LoginFragment : Fragment() {
                     val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
                     dialog.show(parentFragmentManager, "warning_dialog")
                 } else {
-
+                    viewModel.loginUser(
+                        email,
+                        password,
+                        this@LoginFragment
+                    )
                 }
             }
         }
