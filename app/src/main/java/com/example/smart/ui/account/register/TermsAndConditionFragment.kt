@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
+import com.example.smart.R
 import com.example.smart.databinding.FragmentRegisterPasswordBinding
 import com.example.smart.databinding.FragmentTermsAndConditionBinding
 import com.example.smart.ui.account.register.RegisterPasswordFragment
@@ -49,6 +51,7 @@ class TermsOfServiceDialog(
 //                )
 
                 // Dismiss the dialog
+                findNavController().navigate(R.id.action_registerPasswordFragment_to_loginFragment)
                 this@TermsOfServiceDialog.dismiss()
             }
 

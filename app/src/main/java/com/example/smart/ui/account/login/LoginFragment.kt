@@ -10,9 +10,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.result.contract.ActivityResultContracts
+import androidx.cardview.widget.CardView
 import androidx.navigation.fragment.findNavController
 import com.example.smart.R
 import com.example.smart.databinding.FragmentLoginBinding
+import com.example.smart.utils.Helper
 import com.example.smart.utils.ShowInfoDialogFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.common.api.ApiException
@@ -50,9 +52,12 @@ class LoginFragment : Fragment() {
     ): View {
         binding = FragmentLoginBinding.inflate(inflater, container, false)
 
-        val dialog = ShowInfoDialogFragment("Notice", "Please fill in all the required fields.")
-        dialog.show(parentFragmentManager, "infoDialog")
+        initComponents(binding)
 
+        return binding.root
+    }
+
+    private fun initComponents(binding: FragmentLoginBinding) {
         //  set up click listeners and navigation
         binding.apply {
             tvUserOption.setOnClickListener {
@@ -72,9 +77,21 @@ class LoginFragment : Fragment() {
             ivBackButtonLogin.setOnClickListener {
                 findNavController().popBackStack()
             }
-        }
+            cvLogin.setOnClickListener {
+                val email = etEmail.text.toString()
+                val password = etPassword.text.toString()
 
-        return binding.root
+                if (
+                    email.isEmpty() ||
+                    password.isEmpty()
+                ) {
+                    val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
+                    dialog.show(parentFragmentManager, "warning_dialog")
+                } else {
+
+                }
+            }
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -88,15 +105,43 @@ class LoginFragment : Fragment() {
 
         val dialog = AlertDialog.Builder(requireContext())
             .setView(dialogView)
-            .setCancelable(true)
+            .setCancelable(false)
             .create()
 
+        val cvStudent = dialogView.findViewById<CardView>(R.id.cvStudent)
+        val cvTeacher = dialogView.findViewById<CardView>(R.id.cvTeacher)
+        val cvStaff = dialogView.findViewById<CardView>(R.id.cvStaff)
+        val cvStudentOfficers = dialogView.findViewById<CardView>(R.id.cvStudentOfficers)
+
+        // click listeners
+        cvStudent.setOnClickListener {
+            Helper.userRole = "student"
+            dialog.dismiss()
+        }
+
+        cvTeacher.setOnClickListener {
+            Helper.userRole = "teacher"
+            dialog.dismiss()
+        }
+
+        cvStaff.setOnClickListener {
+            Helper.userRole = "staff"
+            dialog.dismiss()
+        }
+
+        cvStudentOfficers.setOnClickListener {
+            Helper.userRole = "officer"
+            dialog.dismiss()
+        }
+
+        // Show the dialog
         dialog.show()
 
-        // Set transparent background to apply custom corners
+
+        // setting transparent background to apply custom corners
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
 
-        // Set custom width (25dp margins on both sides)
+        // setting custom width (25dp margins on both sides)
         val metrics = resources.displayMetrics
         val marginInPx = TypedValue.applyDimension(
             TypedValue.COMPLEX_UNIT_DIP,

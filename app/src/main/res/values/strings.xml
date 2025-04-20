@@ -36,7 +36,7 @@
     <string name="login_email_label">Your email</string>
     <string name="login_password">Password</string>
     <string name="login_password_label">Your password</string>
-    <string name="login_user_option">Not a student? Click here</string>
+    <string name="login_user_option">Want to change role? Click here</string>
     <string name="login_login">Login</string>
     <string name="login_or">Or</string>
     <string name="login_google"> Sign in with Google</string>

@@ -133,6 +133,13 @@
             app:popExitAnim="@anim/push_right_out"
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -149,5 +156,21 @@
     <fragment
         android:id="@+id/registerPasswordFragment"
         android:name="com.example.smart.ui.account.register.RegisterPasswordFragment"
-        android:label="RegisterPasswordFragment" />
+        android:label="RegisterPasswordFragment" >
+        <action
+            android:id="@+id/action_registerPasswordFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out" />
+        <action
+            android:id="@+id/action_registerPasswordFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.smart.ui.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
 </navigation>

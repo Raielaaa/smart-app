@@ -12,6 +12,7 @@ import androidx.core.content.res.ResourcesCompat
 import androidx.navigation.fragment.findNavController
 import com.example.smart.R
 import com.example.smart.databinding.FragmentRegisterBinding
+import com.example.smart.utils.ShowInfoDialogFragment
 
 class RegisterFragment : Fragment() {
     private val viewModel: RegisterViewModel by viewModels()
@@ -44,7 +45,7 @@ class RegisterFragment : Fragment() {
                 val view = super.getView(position, convertView, parent)
                 (view as TextView).apply {
                     typeface = this@apply.typeface
-                    textSize = fontSizeSp  // Applies 8ssp
+                    textSize = fontSizeSp
                 }
                 return view
             }
@@ -52,8 +53,22 @@ class RegisterFragment : Fragment() {
 
         //  click functions
         binding.apply {
+            var selectedRole = ""
+
             cvNext.setOnClickListener {
-                findNavController().navigate(R.id.action_registerFragment_to_registerPasswordFragment)
+                val firstName = etFirstName.text.toString()
+                val lastName = etLastName.text.toString()
+
+                if (
+                    firstName.isEmpty() ||
+                    lastName.isEmpty() ||
+                    selectedRole.isEmpty()
+                ) {
+                    val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
+                    dialog.show(parentFragmentManager, "warning_dialog")
+                } else {
+                    findNavController().navigate(R.id.action_registerFragment_to_registerPasswordFragment)
+                }
             }
             ivBackButtonRegister.setOnClickListener {
                 findNavController().popBackStack()
@@ -63,7 +78,7 @@ class RegisterFragment : Fragment() {
                 setOnClickListener {
                     showDropDown()
                     setOnItemClickListener { parent, _, position, _ ->
-                        val selectedRole = parent.getItemAtPosition(position).toString()
+                        selectedRole = parent.getItemAtPosition(position).toString()
                     }
                 }
             }

@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.lab_ass_app.ui.account.register.TermsOfServiceDialog
 import com.example.smart.R
 import com.example.smart.databinding.FragmentRegisterPasswordBinding
+import com.example.smart.utils.ShowInfoDialogFragment
 
 class RegisterPasswordFragment : Fragment() {
     private val viewModel: RegisterPasswordViewModel by viewModels()
@@ -23,11 +24,30 @@ class RegisterPasswordFragment : Fragment() {
 
         binding.apply {
             cvNext.setOnClickListener {
-                TermsOfServiceDialog(
-                    this@RegisterPasswordFragment,
-                    viewModel,
-                    binding
-                ).show(this@RegisterPasswordFragment.parentFragmentManager, "Register_BottomDialog")
+                val email = etEmailRegister.text.toString()
+                val password = etPasswordRegister.text.toString()
+                val confirmPassword = etConfirmPasswordRegister.text.toString()
+
+                if (
+                    email.isEmpty() ||
+                    password.isEmpty() ||
+                    confirmPassword.isEmpty()
+                ) {
+                    val warningDialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
+                    warningDialog.show(parentFragmentManager, "warning_dialog")
+                } else if (password != confirmPassword) {
+                    val warningDialog = ShowInfoDialogFragment("Warning", "Password and confirm password doesn't match.")
+                    warningDialog.show(parentFragmentManager, "warning_dialog")
+
+                    etConfirmPasswordRegister.setText("")
+                    etPasswordRegister.setText("")
+                } else {
+                    TermsOfServiceDialog(
+                        this@RegisterPasswordFragment,
+                        viewModel,
+                        binding
+                    ).show(this@RegisterPasswordFragment.parentFragmentManager, "Register_BottomDialog")
+                }
             }
             ivBackButtonRegisterPass.setOnClickListener {
                 findNavController().popBackStack()
