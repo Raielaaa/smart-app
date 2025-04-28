@@ -64,6 +64,9 @@ dependencies {
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
+    //  Bubble Tab Bar
+    implementation("io.ak1:bubbletabbar:1.0.8")
+
     //  Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.0")
 

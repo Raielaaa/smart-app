@@ -3,6 +3,13 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Homepage -->
+    <string name="homepage_greeting">Hello, User</string>
+    <string name="homepage_email">email@gmail.com</string>
+    <string name="homepage_role">Student</string>
+    <string name="homepage_warning">16 facility issues detected. Please review them in the Issues tab.</string>
+    <string name="homepage_list_header">Current Facilities</string>
+    <string name="homepage_list_subheader">Click a facility to view its information, reports, and more.</string>
 
     <!-- Information Carousel -->
     <string name="carousel_first_page_header">Enhanced Collaboration</string>
