@@ -17,6 +17,7 @@ class HomepageFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomepageBinding.inflate(inflater, container, false)
+
         return binding.root
     }
 }

@@ -172,5 +172,22 @@
         android:id="@+id/homeFragment"
         android:name="com.example.smart.ui.main.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_facilityInfoFragment"
+            app:destination="@id/facilityInfoFragment"
+            app:enterAnim="@anim/push_left_in"
+            app:exitAnim="@anim/push_left_out"
+            app:popEnterAnim="@anim/push_right_in"
+            app:popExitAnim="@anim/push_right_out" />
+    </fragment>
+    <fragment
+        android:id="@+id/facilityInfoFragment"
+        android:name="com.example.smart.ui.facility.FacilityInfoFragment"
+        android:label="fragment_facility_info"
+        tools:layout="@layout/fragment_facility_info" >
+        <action
+            android:id="@+id/action_facilityInfoFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

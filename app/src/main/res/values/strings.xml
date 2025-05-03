@@ -3,6 +3,45 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Selected info bottom sheet -->
+    <string name="bottom_sheet_title">Submitted Issue Summary</string>
+    <string name="bottom_sheet_issue_name">Defective Chair</string>
+    <string name="bottom_sheet_issue_placeholder">Issue title</string>
+    <string name="bottom_sheet_submitter">Ralph Daniel Honra</string>
+    <string name="bottom_sheet_sender">Sender</string>
+    <string name="bottom_sheet_date">March 04, 2025</string>
+    <string name="bottom_sheet_submitted_on">Submitted on</string>
+    <string name="bottom_sheet_description">Description</string>
+    <string name="bottom_sheet_description_body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="bottom_sheet_submit_message">Submit a message?</string>
+    <string name="bottom_sheet_submit_message_body">Click the button bellow if you wish to provide a detailed description of the problem to help the maintenance staff address it efficiently.</string>
+    <string name="bottom_sheet_button">Add Issue Note</string>
+    <string name="bottom_sheet_pending">Pending</string>
+    <string name="bottom_sheet_student">Student</string>
+    
+    <!-- Selected Item -->
+    <string name="item_room_number">Room number: 1732</string>
+    <string name="item_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="item_reports">Reports</string>
+    <string name="item_community">Community</string>
+
+    <!-- Recyclerview item info -->
+    <string name="item_title">Defective Chair</string>
+    <string name="item_sub_title">Issue title</string>
+    <string name="item_date">March 04, 2025</string>
+    <string name="item_date_submitted">Date submitted</string>
+    <string name="item_pending">Pending</string>
+    <string name="item_ongoing">Ongoing</string>
+    <string name="item_completed">Completed</string>
+    <string name="item_dismissed">Dismissed</string>
+    
+    <!-- Recyclerview community item -->
+    <string name="item_community_name">Ralph Daniel Honra</string>
+    <string name="item_community_date_time">03 MARCH AT 03:45</string>
+    <string name="item_community_comment">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</string>
+    <string name="item_community_student">Student</string>
+    <string name="item_community_r">R</string>
+
     <!-- Homepage -->
     <string name="homepage_greeting">Hello, User</string>
     <string name="homepage_email">email@gmail.com</string>
