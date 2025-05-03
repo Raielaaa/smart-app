@@ -190,4 +190,9 @@
             android:id="@+id/action_facilityInfoFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/issueInfoFragment"
+        android:name="com.example.smart.ui.report_issue.IssueInfoFragment"
+        android:label="fragment_issue_info"
+        tools:layout="@layout/fragment_issue_info" />
 </navigation>
