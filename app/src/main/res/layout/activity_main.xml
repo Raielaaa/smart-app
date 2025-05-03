@@ -47,6 +47,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            app:tint="@null"
+            app:fabCustomSize="@dimen/_45sdp"
+            app:maxImageSize="@dimen/_16ssp"
+            android:src="@drawable/send"
+            android:contentDescription="floating action button"
+            app:backgroundTint="@color/main_color"
+            app:layout_constraintBottom_toBottomOf="@+id/nav_host_fragment_main"
+            app:layout_constraintEnd_toEndOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

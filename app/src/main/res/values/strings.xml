@@ -3,6 +3,30 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- issue page -->
+    <string name="issue_banner">Insure all information is accurate before proceeding</string>
+    <string name="issue_process_info">Processed Information</string>
+    <string name="issue_process_info_body">Thoroughly review all details. Upon confirmation, submit the task for assessment and action by the maintenance staff.</string>
+    <string name="issue_target_lab">Target Laboratory</string>
+    <string name="issue_target_lab_body">Please select the specific laboratory to which you would like to submit your concern.</string>
+    <string name="issue_target_lab_label">Choose your laboratory here . . .</string>
+    <string name="issue_title">Issue title</string>
+    <string name="issue_title_body">Please provide a clear and concise title that accurately describes the issue to facilitate efficient processing and resolution.</string>
+    <string name="issue_title_label">Write your title here . . .</string>
+    <string name="issue_your_name">Your name</string>
+    <string name="issue_your_name_body">Please verify your full name as it appears in your registration records to ensure accurate task tracking.</string>
+    <string name="issue_your_name_label">Ralph Daniel Honra</string>
+
+    <!-- instructions -->
+    <string name="guide_title">Please ensure the following:</string>
+    <string name="guide_1">1</string>
+    <string name="guide_1_content">Take a clear photo of the task or facility issue that requires attention. Ensure the image accurately represents the problem.</string>
+    <string name="guide_2">2</string>
+    <string name="guide_2_content">Verify the system-generated information. Make sure everything is correct before proceeding.</string>
+    <string name="guide_3">3</string>
+    <string name="guide_3_content">Double-check all provided details. Once confirmed, submit the task for review and processing by the maintenance staff.</string>
+    <string name="guide_button">Proceed</string>
+
     <!-- send note bottom sheet -->
     <string name="bottom_sheet_send_note_title">Describe the Issue</string>
     <string name="bottom_sheet_send_note_body">Please provide a detailed description of the problem to help the maintenance staff address it efficiently.</string>

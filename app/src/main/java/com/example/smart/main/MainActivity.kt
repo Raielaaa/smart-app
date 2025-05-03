@@ -13,6 +13,7 @@ import com.example.smart.databinding.ActivityMainBinding
 import dagger.hilt.android.AndroidEntryPoint
 import io.ak1.BubbleTabBar
 import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
+import com.example.smart.ui.report_issue.GuideBottomSheet
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         bubbleTabBar = binding.bubbleTabBar
+        val fab = binding.fab
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment_main) as NavHostFragment
         navController = navHostFragment.navController
@@ -64,13 +66,20 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+        fab.setOnClickListener {
+            val itemInfoBottomSheet = GuideBottomSheet()
+            itemInfoBottomSheet.show(supportFragmentManager, "guide_bottom_sheet")
+        }
+
         navController.addOnDestinationChangedListener { _, destination, _ ->
             bubbleTabBar.setSelectedWithId(destination.id, false)
 
             if (!excludedFragmentsInBottomNav.contains(destination.id)) {
                 bubbleTabBar.visibility = View.VISIBLE
+                fab.visibility = View.VISIBLE
             } else {
                 bubbleTabBar.visibility = View.GONE
+                fab.visibility = View.GONE
             }
         }
     }
