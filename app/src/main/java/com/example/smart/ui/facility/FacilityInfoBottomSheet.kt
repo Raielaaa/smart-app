@@ -17,7 +17,14 @@ class FacilityInfoBottomSheet : BottomSheetDialogFragment() {
     ): View {
         binding = FragmentFacilityInfoBottomSheetBinding.inflate(inflater, container, false)
 
+        binding.apply {
+            cvAddNote.setOnClickListener {
+                val itemInfoBottomSheet = FacilityInfoBottomSheetSendNote()
+                this@FacilityInfoBottomSheet.dismiss()
 
+                itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet_send_note")
+            }
+        }
 
         return binding.root
     }

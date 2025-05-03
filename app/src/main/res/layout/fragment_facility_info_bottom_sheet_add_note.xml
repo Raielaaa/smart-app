@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    android:paddingBottom="@dimen/_50sdp">
+
+    <androidx.cardview.widget.CardView
+        android:layout_marginTop="@dimen/_35sdp"
+        android:id="@+id/cvLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        app:cardBackgroundColor="@color/main_color"
+        app:cardCornerRadius="@dimen/_7sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etAddNote">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="@dimen/_12sdp"
+                android:fontFamily="@font/poppins_bold"
+                android:text="@string/bottom_sheet_send_note_button"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_8ssp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.5" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/bottom_sheet_send_note_title"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView52"
+        app:layout_constraintStart_toEndOf="@+id/textView52"
+        app:layout_constraintTop_toTopOf="@+id/textView52"
+        app:srcCompat="@drawable/arrow_right" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/bottom_sheet_send_note_body"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+    <EditText
+        android:id="@+id/etAddNote"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:background="@drawable/account_input_background"
+        android:ems="10"
+        android:fontFamily="@font/poppins"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:hint="@string/bottom_sheet_send_note_label"
+        android:inputType="textEmailAddress"
+        android:paddingHorizontal="@dimen/_15sdp"
+        android:paddingVertical="@dimen/_10sdp"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_horizontal_line_for_dialog" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

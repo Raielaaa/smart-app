@@ -3,6 +3,12 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- send note bottom sheet -->
+    <string name="bottom_sheet_send_note_title">Describe the Issue</string>
+    <string name="bottom_sheet_send_note_body">Please provide a detailed description of the problem to help the maintenance staff address it efficiently.</string>
+    <string name="bottom_sheet_send_note_label">Write your message here . . .</string>
+    <string name="bottom_sheet_send_note_button">Submit</string>
+
     <!-- Selected info bottom sheet -->
     <string name="bottom_sheet_title">Submitted Issue Summary</string>
     <string name="bottom_sheet_issue_name">Defective Chair</string>
