@@ -8,6 +8,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.smart.R
 import com.example.smart.utils.Helper
 import com.example.smart.utils.LoadingDialogFragment
+import com.example.smart.utils.ShowInfoDialogFragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
@@ -85,7 +86,9 @@ class LoginViewModel @Inject constructor(
                                 }
                         } else {
                             // No documents found, account not found
-                            displayToastMessage("Account not found, please try again", hostFragment)
+//                            displayToastMessage("Account not found, please try again", hostFragment)
+                            ShowInfoDialogFragment("Warning", "Account not found, please try again")
+                                .show(hostFragment.parentFragmentManager, "info_dialog")
                             // Dismiss dialog
                             loadingDialog?.dismiss()
                         }

@@ -14,6 +14,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import io.ak1.BubbleTabBar
 import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import com.example.smart.ui.report_issue.GuideBottomSheet
+import com.example.smart.utils.Helper
+import com.example.smart.utils.ShowInfoDialogFragment
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -67,8 +69,13 @@ class MainActivity : AppCompatActivity() {
         }
 
         fab.setOnClickListener {
-            val itemInfoBottomSheet = GuideBottomSheet()
-            itemInfoBottomSheet.show(supportFragmentManager, "guide_bottom_sheet")
+            if (Helper.userRole.lowercase() == "staff" || Helper.userRole.lowercase() == "officer") {
+                val itemInfoBottomSheet = GuideBottomSheet()
+                itemInfoBottomSheet.show(supportFragmentManager, "guide_bottom_sheet")
+            } else {
+                ShowInfoDialogFragment("Warning", "Only Staff and Officers are permitted to submit facility issues.")
+                    .show(supportFragmentManager, "info_dialog")
+            }
         }
 
         navController.addOnDestinationChangedListener { _, destination, _ ->

@@ -164,23 +164,23 @@ class LoginFragment : Fragment() {
                 findNavController().popBackStack()
             }
             cvLogin.setOnClickListener {
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-//                val email = etEmail.text.toString()
-//                val password = etPassword.text.toString()
-//
-//                if (
-//                    email.isEmpty() ||
-//                    password.isEmpty()
-//                ) {
-//                    val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
-//                    dialog.show(parentFragmentManager, "warning_dialog")
-//                } else {
-//                    viewModel.loginUser(
-//                        email,
-//                        password,
-//                        this@LoginFragment
-//                    )
-//                }
+//                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                val email = etEmail.text.toString()
+                val password = etPassword.text.toString()
+
+                if (
+                    email.isEmpty() ||
+                    password.isEmpty()
+                ) {
+                    val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
+                    dialog.show(parentFragmentManager, "warning_dialog")
+                } else {
+                    viewModel.loginUser(
+                        email,
+                        password,
+                        this@LoginFragment
+                    )
+                }
             }
         }
     }

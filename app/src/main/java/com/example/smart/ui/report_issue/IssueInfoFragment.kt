@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.cardview.widget.CardView
 import com.example.smart.R
 import com.example.smart.databinding.FragmentIssueInfoBinding
 
@@ -29,10 +30,13 @@ class IssueInfoFragment : Fragment() {
                     .setView(dialogView)
                     .setCancelable(false)
                     .create()
-
                 // Show the dialog
                 dialog.show()
 
+                val cancelButton = dialog.findViewById<CardView>(R.id.cvWarningCancel)
+                cancelButton.setOnClickListener {
+                    dialog.dismiss()
+                }
 
                 // setting transparent background to apply custom corners
                 dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)

@@ -2,6 +2,7 @@ package com.example.smart.ui.facility
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -13,6 +14,7 @@ import com.example.smart.models.FacilityCommunityModel
 import com.example.smart.models.FacilityInfoModel
 import com.example.smart.ui.adapters.FacilityCommunityAdapter
 import com.example.smart.ui.adapters.FacilityInfoAdapter
+import com.example.smart.utils.Helper
 
 class FacilityInfoFragment : Fragment() {
     private val viewModel: FacilityInfoViewModel by viewModels()
@@ -27,8 +29,12 @@ class FacilityInfoFragment : Fragment() {
         binding.apply {
             val facilityItems = getDummyFacilityInfoList()
             val facilityAdapter = FacilityInfoAdapter {
-                val itemInfoBottomSheet = FacilityInfoBottomSheet()
-                itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
+                    val itemInfoBottomSheet = FacilityInfoBottomSheet()
+                    itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                } else {
+                    FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
+                }
             }
             facilityAdapter.setItem(facilityItems)
             rvFacilityInfo.adapter = facilityAdapter
@@ -59,8 +65,12 @@ class FacilityInfoFragment : Fragment() {
                 cvCommunity.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
 
                 val adapter = FacilityInfoAdapter {
-                    val itemInfoBottomSheet = FacilityInfoBottomSheet()
-                    itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                    if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
+                        val itemInfoBottomSheet = FacilityInfoBottomSheet()
+                        itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                    } else {
+                        FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
+                    }
                 }
                 adapter.setItem(getDummyFacilityInfoList())
                 rvFacilityInfo.adapter = adapter
