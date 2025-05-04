@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_bg"
+    tools:context=".ui.profile.ContactFragment"
+    android:paddingBottom="@dimen/_25sdp">
+
+    <TextView
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginStart="@dimen/_25sdp"
+        android:id="@+id/textView52"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/contact_header"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView22" />
+
+    <ImageView
+        android:id="@+id/imageView21"
+        android:layout_width="@dimen/_12sdp"
+        android:layout_height="@dimen/_12sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_2sdp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView52"
+        app:layout_constraintStart_toEndOf="@+id/textView52"
+        app:layout_constraintTop_toTopOf="@+id/textView52"
+        app:srcCompat="@drawable/arrow_right" />
+
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="@dimen/_25sdp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/contact_header_content"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView52" />
+
+    <ImageView
+        android:id="@+id/imageView22"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_25sdp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/account_horizontal_line_for_dialog" />
+
+    <ImageView
+        android:layout_marginTop="@dimen/_12sdp"
+        android:id="@+id/cvEmail"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:src="@drawable/bottom_email"
+        app:layout_constraintStart_toStartOf="@+id/textView55"
+        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+
+    <TextView
+        android:layout_marginStart="@dimen/_12sdp"
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_email_label"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toEndOf="@+id/cvEmail"
+        app:layout_constraintTop_toTopOf="@+id/cvEmail" />
+
+    <TextView
+        android:id="@+id/textView85"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_email"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="@+id/tvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+    <ImageView
+        android:id="@+id/cvMessage"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:src="@drawable/bottom_chat"
+        app:layout_constraintStart_toStartOf="@+id/cvEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cvEmail" />
+
+    <TextView
+        android:id="@+id/tvMessage"
+        android:layout_width="33dp"
+        android:layout_height="11dp"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:fontFamily="@font/poppins_bold"
+        android:text="@string/contact_message_label"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toEndOf="@+id/cvMessage"
+        app:layout_constraintTop_toTopOf="@+id/cvMessage" />
+
+    <TextView
+        android:id="@+id/textView86"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_message"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="@+id/tvMessage"
+        app:layout_constraintTop_toBottomOf="@+id/tvMessage" />
+
+    <ImageView
+        android:id="@+id/cvCall"
+        android:layout_width="@dimen/_27sdp"
+        android:layout_height="@dimen/_27sdp"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/bottom_call"
+        app:layout_constraintStart_toStartOf="@+id/cvMessage"
+        app:layout_constraintTop_toBottomOf="@+id/cvMessage" />
+
+    <TextView
+        android:layout_marginStart="@dimen/_12sdp"
+        android:id="@+id/tvCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_call_label"
+        android:fontFamily="@font/poppins_bold"
+        android:textSize="@dimen/_8ssp"
+        app:layout_constraintStart_toEndOf="@+id/cvCall"
+        app:layout_constraintTop_toTopOf="@+id/cvCall" />
+
+    <TextView
+        android:id="@+id/textView861"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_call"
+        android:fontFamily="@font/poppins"
+        android:textSize="@dimen/_8sdp"
+        app:layout_constraintStart_toStartOf="@+id/tvCall"
+        app:layout_constraintTop_toBottomOf="@+id/tvCall" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

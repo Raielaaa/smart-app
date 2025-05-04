@@ -2,6 +2,15 @@
     <string name="app_name">Smart</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="contact_header">Contact Information</string>
+    <string name="contact_header_content">Reach out to us directly via email, message, or call for any inquiries or assistance you may need.</string>
+    <string name="contact_email_label">Email</string>
+    <string name="contact_email">ralphhonra@gmail.com</string>
+    <string name="contact_message_label">Message</string>
+    <string name="contact_message">+63 970 190 0391</string>
+    <string name="contact_call_label">Call</string>
+    <string name="contact_call">+63 970 190 0391</string>
 
     <!-- profile -->
     <string name="profile_name_label">Full Name :</string>

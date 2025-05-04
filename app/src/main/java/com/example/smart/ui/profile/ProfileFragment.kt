@@ -23,6 +23,9 @@ class ProfileFragment : Fragment() {
             cvTermsAndPolicy.setOnClickListener {
                 EmptyTermsAndConditionFragment().show(parentFragmentManager, "show_terms_and_condition_bottom_dialog")
             }
+            cvShowContact.setOnClickListener {
+                ContactFragment().show(parentFragmentManager, "show_contact_dialog")
+            }
         }
 
         return binding.root
