@@ -195,4 +195,14 @@
         android:name="com.example.smart.ui.report_issue.IssueInfoFragment"
         android:label="fragment_issue_info"
         tools:layout="@layout/fragment_issue_info" />
+    <fragment
+        android:id="@+id/issueListFragment"
+        android:name="com.example.smart.ui.list.IssueListFragment"
+        android:label="fragment_issue_list"
+        tools:layout="@layout/fragment_issue_list" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.smart.ui.profile.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
 </navigation>

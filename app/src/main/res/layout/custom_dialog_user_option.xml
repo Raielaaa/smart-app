@@ -279,7 +279,7 @@
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/dialog_student" />
+                        app:srcCompat="@drawable/dialog_officer" />
 
                     <TextView
                         android:id="@+id/textView1400"

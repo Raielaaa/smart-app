@@ -3,6 +3,31 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- profile -->
+    <string name="profile_name_label">Full Name :</string>
+    <string name="profile_name">Ralph Daniel Honra</string>
+    <string name="profile_email_label">Email Address :</string>
+    <string name="profile_email">sampleemail@gmail.com</string>
+    <string name="profile_amount_label">Total Issues Sent :</string>
+    <string name="profile_amount">10</string>
+    <string name="profile_show_contact">Show Contact</string>
+    <string name="profile_terms_and_policy">Terms and policy</string>
+    <string name="profile_all_rights_reserved">© 2025 All Rights Reserved.</string>
+
+    <!-- list item -->
+    <string name="list_header">Facility Issues Overview</string>
+    <string name="list_subheader">Browse reported facility issues with current statuses and summarized information for quick review.</string>
+    <string name="list_pending">Pending</string>
+    <string name="list_ongoing">Ongoing</string>
+    <string name="list_completed">Completed</string>
+
+    <!-- custom dialog access denied -->
+    <string name="access_notice">Notice</string>
+    <string name="access_title">Access Denied</string>
+    <string name="access_body">Only authorized users can create accounts with this role. Kindly enter the valid authorization code to continue.</string>
+    <string name="access_button">Verify</string>
+    <string name="access_label_1">Enter your 6-digit code&#160;&#160;&#160;&#160;|&#160;&#160;&#160;&#160;</string>
+
     <!-- custom dialog warning -->
     <string name="dialog_warning">Warning!</string>
     <string name="dialog_body">Are you sure you want to save this information? This action cannot be undone</string>
@@ -54,7 +79,7 @@
     <string name="bottom_sheet_button">Add Issue Note</string>
     <string name="bottom_sheet_pending">Pending</string>
     <string name="bottom_sheet_student">Student</string>
-    
+
     <!-- Selected Item -->
     <string name="item_room_number">Room number: 1732</string>
     <string name="item_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
@@ -70,7 +95,7 @@
     <string name="item_ongoing">Ongoing</string>
     <string name="item_completed">Completed</string>
     <string name="item_dismissed">Dismissed</string>
-    
+
     <!-- Recyclerview community item -->
     <string name="item_community_name">Ralph Daniel Honra</string>
     <string name="item_community_date_time">03 MARCH AT 03:45</string>

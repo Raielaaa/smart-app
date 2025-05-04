@@ -50,17 +50,17 @@ class MainActivity : AppCompatActivity() {
             when (id) {
                 R.id.firstPage -> {
                     if (navController.currentDestination?.id != R.id.firstPage) {
-//                        navController.navigate(R.id.homeFragment)
+                        navController.navigate(R.id.homeFragment)
                     }
                 }
                 R.id.secondPage -> {
                     if (navController.currentDestination?.id != R.id.secondPage) {
-//                        navController.navigate(R.id.homeFragment)
+                        navController.navigate(R.id.issueListFragment)
                     }
                 }
                 R.id.thirdPage -> {
                     if (navController.currentDestination?.id != R.id.thirdPage) {
-//                        navController.navigate(R.id.homeFragment)
+                        navController.navigate(R.id.profileFragment)
                     }
                 }
             }

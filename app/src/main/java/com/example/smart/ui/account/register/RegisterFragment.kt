@@ -1,5 +1,6 @@
 package com.example.smart.ui.account.register
 
+import android.app.AlertDialog
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -67,21 +68,32 @@ class RegisterFragment : Fragment() {
                     val dialog = ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
                     dialog.show(parentFragmentManager, "warning_dialog")
                 } else {
-                    //  store the values in a hashmap then pass it to the next fragment
-                    val userData = hashMapOf(
-                        "firstName" to firstName,
-                        "lastName" to lastName,
-                        "role" to selectedRole.lowercase()
-                    )
+                    if (selectedRole.lowercase() == "officers" || selectedRole.lowercase() == "staff") {
+                        val dialogView = layoutInflater.inflate(R.layout.custom_dialog_code_confirmation, null)
 
-                    //  serialize the hashmap into a bundle
-                    val bundle = Bundle()
-                    bundle.putSerializable("userData", userData)
+                        val dialog = AlertDialog.Builder(requireContext())
+                            .setView(dialogView)
+                            .setCancelable(false)
+                            .create()
 
-                    findNavController().navigate(
-                        R.id.action_registerFragment_to_registerPasswordFragment,
-                        bundle
-                    )
+                        dialog.show()
+                    } else {
+                        //  store the values in a hashmap then pass it to the next fragment
+                        val userData = hashMapOf(
+                            "firstName" to firstName,
+                            "lastName" to lastName,
+                            "role" to selectedRole.lowercase()
+                        )
+
+                        //  serialize the hashmap into a bundle
+                        val bundle = Bundle()
+                        bundle.putSerializable("userData", userData)
+
+                        findNavController().navigate(
+                            R.id.action_registerFragment_to_registerPasswordFragment,
+                            bundle
+                        )
+                    }
                 }
             }
             ivBackButtonRegister.setOnClickListener {
