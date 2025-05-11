@@ -26,7 +26,7 @@
                 android:fontFamily="@font/poppins_bold"
                 android:textSize="@dimen/_8ssp"
                 android:textColor="@color/main_color"
-                android:id="@+id/textView41"
+                android:id="@+id/tvDateSubmitted"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/item_date"
@@ -84,7 +84,7 @@
                 app:layout_constraintStart_toEndOf="@+id/imageView12" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
+                android:id="@+id/cvStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -96,7 +96,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/tvStatus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"

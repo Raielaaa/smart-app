@@ -26,8 +26,8 @@ class HomeFragment : Fragment() {
     @Named("FirebaseFireStore.Instance")
     lateinit var fireStore: FirebaseFirestore
 
-    private lateinit var binding: FragmentHomeBinding
     private var loadingDialog: LoadingDialogFragment? = null
+    private lateinit var binding: FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

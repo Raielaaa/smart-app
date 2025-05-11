@@ -1,14 +1,13 @@
 package com.example.smart.models
 
+import android.net.Uri
+
 data class FacilityInfoModel(
-    val facilityID: String?,
     val roomNumber: String?,
-    val facilityName: String?,
-    val facilityNumber: String?,
-    val facilityDescription: String?,
     val issueName: String?,
-    val issueData: String?,
     val issueStatus: String?,
     val issueDescription: String?,
-    val issueSubmitterID: String?
+    val issueSubmitterID: String?,
+    val issueImageUri: String,
+    val dateSubmitted: String
 )

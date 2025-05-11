@@ -1,5 +1,6 @@
 package com.example.smart.ui.facility
 
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
@@ -11,6 +12,7 @@ import androidx.core.content.ContextCompat
 import com.example.smart.R
 import com.example.smart.databinding.FragmentFacilityInfoBinding
 import com.example.smart.models.FacilityCommunityModel
+import com.example.smart.models.FacilityHomeModel
 import com.example.smart.models.FacilityInfoModel
 import com.example.smart.ui.adapters.FacilityCommunityAdapter
 import com.example.smart.ui.adapters.FacilityInfoAdapter
@@ -47,13 +49,39 @@ class FacilityInfoFragment : Fragment() {
         retrieveDataFromDB()
 
         binding.apply {
+            textView35.text = "Room number: $roomNumber"
             facilityInfo = FacilityInfoAdapter {
-                if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
-                    val itemInfoBottomSheet = FacilityInfoBottomSheet()
-                    itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
-                } else {
-                    FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
-                }
+                loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")
+                loadingDialog?.show(parentFragmentManager, "loading_dialog")
+
+                fireStore.collection(Constants.COLLECTION_REPORTS)
+                    .whereEqualTo("issueName", it.issueName)
+                    .whereEqualTo("dateSubmitted", it.dateSubmitted)
+                    .whereEqualTo("issueSubmitterID", it.issueSubmitterID)
+                    .get()
+                    .addOnSuccessListener { querySnapshot ->
+                        var retrievedData: FacilityInfoModel? = null
+                        for (document in querySnapshot) {
+                            retrievedData = FacilityInfoModel(
+                                roomNumber = document.getString("roomNumber") ?: "",
+                                issueName = document.getString("issueName") ?: "",
+                                issueStatus = document.getString("issueStatus") ?: "",
+                                issueDescription = document.getString("issueDescription") ?: "",
+                                issueSubmitterID = document.getString("issueSubmitterID") ?: "",
+                                issueImageUri = document.getString("issueImageUri") ?: "",
+                                dateSubmitted = document.getString("dateSubmitted") ?: ""
+                            )
+                        }
+
+                        if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
+                            val itemInfoBottomSheet = FacilityInfoBottomSheet(retrievedData!!)
+                            itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                            loadingDialog?.dismiss()
+                        } else {
+                            FacilityStaffFragment(retrievedData!!).show(parentFragmentManager, "item_info_staff_bottom_sheet")
+                            loadingDialog?.dismiss()
+                        }
+                    }
             }
             facilityInfo!!.setItem(retrievedItemsInfo)
             rvFacilityInfo.adapter = facilityInfo
@@ -84,12 +112,37 @@ class FacilityInfoFragment : Fragment() {
                 cvCommunity.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
 
                 facilityInfo = FacilityInfoAdapter {
-                    if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
-                        val itemInfoBottomSheet = FacilityInfoBottomSheet()
-                        itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
-                    } else {
-                        FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
-                    }
+                    loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")
+                    loadingDialog?.show(parentFragmentManager, "loading_dialog")
+
+                    fireStore.collection(Constants.COLLECTION_REPORTS)
+                        .whereEqualTo("issueName", it.issueName)
+                        .whereEqualTo("dateSubmitted", it.dateSubmitted)
+                        .whereEqualTo("issueSubmitterID", it.issueSubmitterID)
+                        .get()
+                        .addOnSuccessListener { querySnapshot ->
+                            var retrievedData: FacilityInfoModel? = null
+                            for (document in querySnapshot) {
+                                retrievedData = FacilityInfoModel(
+                                    roomNumber = document.getString("roomNumber") ?: "",
+                                    issueName = document.getString("issueName") ?: "",
+                                    issueStatus = document.getString("issueStatus") ?: "",
+                                    issueDescription = document.getString("issueDescription") ?: "",
+                                    issueSubmitterID = document.getString("issueSubmitterID") ?: "",
+                                    issueImageUri = document.getString("issueImageUri") ?: "",
+                                    dateSubmitted = document.getString("dateSubmitted") ?: ""
+                                )
+                            }
+
+                            if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
+                                val itemInfoBottomSheet = FacilityInfoBottomSheet(retrievedData!!)
+                                itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
+                                loadingDialog?.dismiss()
+                            } else {
+                                FacilityStaffFragment(retrievedData!!).show(parentFragmentManager, "item_info_staff_bottom_sheet")
+                                loadingDialog?.dismiss()
+                            }
+                        }
                 }
                 facilityInfo!!.setItem(retrievedItemsInfo)
                 rvFacilityInfo.adapter = facilityInfo
@@ -112,16 +165,13 @@ class FacilityInfoFragment : Fragment() {
                     for (document in querySnapshot) {
                         retrievedItemsInfo.add(
                             FacilityInfoModel(
-                                facilityID = document.get("facilityID").toString(),
                                 roomNumber = document.get("roomNumber").toString(),
-                                facilityName = document.get("facilityName").toString(),
-                                facilityNumber = document.get("facilityNumber").toString(),
-                                facilityDescription = document.get("facilityDescription").toString(),
                                 issueName = document.get("issueName").toString(),
-                                issueData = document.get("issueData").toString(),
                                 issueStatus = document.get("issueStatus").toString(),
                                 issueDescription = document.get("issueDescription").toString(),
-                                issueSubmitterID = document.get("issueSubmitterID").toString()
+                                issueSubmitterID = document.get("issueSubmitterID").toString(),
+                                issueImageUri = document.getString("issueImageUri") ?: "",
+                                dateSubmitted = document.get("dateSubmitted").toString()
                             )
                         )
                     }

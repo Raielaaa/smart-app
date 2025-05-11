@@ -1,5 +1,6 @@
 package com.example.smart.ui.list
 
+import android.net.Uri
 import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
@@ -59,16 +60,13 @@ class IssueListFragment : Fragment() {
                     for (document in querySnapshot) {
                         retrievedItemsInfo.add(
                             FacilityInfoModel(
-                                facilityID = document.get("facilityID").toString(),
                                 roomNumber = document.get("roomNumber").toString(),
-                                facilityName = document.get("facilityName").toString(),
-                                facilityNumber = document.get("facilityNumber").toString(),
-                                facilityDescription = document.get("facilityDescription").toString(),
                                 issueName = document.get("issueName").toString(),
-                                issueData = document.get("issueData").toString(),
                                 issueStatus = document.get("issueStatus").toString(),
                                 issueDescription = document.get("issueDescription").toString(),
-                                issueSubmitterID = document.get("issueSubmitterID").toString()
+                                issueSubmitterID = document.get("issueSubmitterID").toString(),
+                                issueImageUri = document.getString("issueImageUri") ?: "",
+                                dateSubmitted = document.get("dateSubmitted").toString()
                             )
                         )
                     }

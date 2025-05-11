@@ -27,7 +27,7 @@
             android:layout_height="match_parent" >
 
             <ImageView
-                android:id="@+id/imageView25"
+                android:id="@+id/ivExit"
                 android:layout_width="@dimen/_22sdp"
                 android:layout_height="@dimen/_22sdp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,6 +97,7 @@
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cvConfirm"
                 android:layout_marginTop="@dimen/_20sdp"
                 android:layout_width="0dp"
                 android:layout_marginStart="@dimen/_8sdp"

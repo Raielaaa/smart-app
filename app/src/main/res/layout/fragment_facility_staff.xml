@@ -163,7 +163,7 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView444"
+        android:id="@+id/cvStatusStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="@dimen/_25sdp"
@@ -171,10 +171,10 @@
         app:cardCornerRadius="@dimen/_7sdp"
         app:cardElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView39">
+        app:layout_constraintTop_toTopOf="@+id/tvIssueTitleStaff">
 
         <TextView
-            android:id="@+id/textView4544"
+            android:id="@+id/tvStatusStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_15sdp"
@@ -186,17 +186,17 @@
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/cardView4444"
+        android:id="@+id/cvRoleStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/student_bg"
         app:cardCornerRadius="@dimen/_7sdp"
         app:cardElevation="0dp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView444"
-        app:layout_constraintTop_toTopOf="@+id/textView48">
+        app:layout_constraintEnd_toEndOf="@+id/cvStatusStaff"
+        app:layout_constraintTop_toTopOf="@+id/tvIssueSenderStaff">
 
         <TextView
-            android:id="@+id/textView45444"
+            android:id="@+id/tvRoleStaff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_15sdp"
@@ -221,7 +221,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView19" />
 
     <TextView
-        android:id="@+id/textView39"
+        android:id="@+id/tvIssueTitleStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_25sdp"
@@ -240,11 +240,11 @@
         android:fontFamily="@font/poppins"
         android:text="@string/bottom_sheet_issue_placeholder"
         android:textSize="@dimen/_8ssp"
-        app:layout_constraintStart_toStartOf="@+id/textView39"
-        app:layout_constraintTop_toBottomOf="@+id/textView39" />
+        app:layout_constraintStart_toStartOf="@+id/tvIssueTitleStaff"
+        app:layout_constraintTop_toBottomOf="@+id/tvIssueTitleStaff" />
 
     <TextView
-        android:id="@+id/textView48"
+        android:id="@+id/tvIssueSenderStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_6sdp"
@@ -262,11 +262,11 @@
         android:fontFamily="@font/poppins"
         android:text="@string/bottom_sheet_sender"
         android:textSize="@dimen/_8ssp"
-        app:layout_constraintStart_toStartOf="@+id/textView48"
-        app:layout_constraintTop_toBottomOf="@+id/textView48" />
+        app:layout_constraintStart_toStartOf="@+id/tvIssueSenderStaff"
+        app:layout_constraintTop_toBottomOf="@+id/tvIssueSenderStaff" />
 
     <TextView
-        android:id="@+id/textView50"
+        android:id="@+id/tvDateSubmittedStaff"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/_6sdp"
@@ -283,16 +283,16 @@
         android:layout_height="wrap_content"
         android:text="@string/bottom_sheet_submitted_on"
         android:textSize="@dimen/_8ssp"
-        app:layout_constraintStart_toStartOf="@+id/textView50"
-        app:layout_constraintTop_toBottomOf="@+id/textView50" />
+        app:layout_constraintStart_toStartOf="@+id/tvDateSubmittedStaff"
+        app:layout_constraintTop_toBottomOf="@+id/tvDateSubmittedStaff" />
 
     <ImageView
         android:layout_marginEnd="@dimen/_8sdp"
         android:id="@+id/imageView20"
         android:layout_width="@dimen/_20sdp"
         android:layout_height="@dimen/_20sdp"
-        app:layout_constraintEnd_toEndOf="@+id/cardView4444"
-        app:layout_constraintTop_toTopOf="@+id/textView50"
+        app:layout_constraintEnd_toEndOf="@+id/cvRoleStaff"
+        app:layout_constraintTop_toTopOf="@+id/tvDateSubmittedStaff"
         app:srcCompat="@drawable/chat" />
 
     <TextView
@@ -318,7 +318,7 @@
         app:srcCompat="@drawable/arrow_right" />
 
     <TextView
-        android:id="@+id/textView55"
+        android:id="@+id/tvDescStaff"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
@@ -336,8 +336,8 @@
         android:fontFamily="@font/poppins_bold"
         android:text="@string/facility_staff_header"
         android:textSize="@dimen/_8ssp"
-        app:layout_constraintStart_toStartOf="@+id/textView55"
-        app:layout_constraintTop_toBottomOf="@+id/textView55" />
+        app:layout_constraintStart_toStartOf="@+id/tvDescStaff"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescStaff" />
 
     <TextView
         android:id="@+id/textView57"
@@ -346,7 +346,14 @@
         android:fontFamily="@font/poppins"
         android:text="@string/facility_staff_subheader"
         android:textSize="@dimen/_8ssp"
-        app:layout_constraintEnd_toEndOf="@+id/textView55"
+        app:layout_constraintEnd_toEndOf="@+id/tvDescStaff"
         app:layout_constraintStart_toStartOf="@+id/textView56"
         app:layout_constraintTop_toBottomOf="@+id/textView56" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_45sdp"
+        app:layout_constraintTop_toBottomOf="@+id/cvAddNote"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
