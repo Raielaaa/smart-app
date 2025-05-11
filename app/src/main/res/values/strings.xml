@@ -96,7 +96,7 @@
 
     <!-- Selected Item -->
     <string name="item_room_number">Room number: 1732</string>
-    <string name="item_content">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="item_content">You may report any damaged, missing, or malfunctioning items or facilities. Examples include air conditioners, fans, windows, doorknobs, doors, televisions, chairs, sockets, and lights.</string>
     <string name="item_reports">Reports</string>
     <string name="item_community">Community</string>
 

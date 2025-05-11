@@ -2,41 +2,82 @@ package com.example.smart.ui.list
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.smart.R
 import com.example.smart.databinding.FragmentIssueListBinding
+import com.example.smart.models.FacilityCommunityModel
 import com.example.smart.models.FacilityInfoModel
 import com.example.smart.ui.adapters.FacilityInfoAdapter
+import com.example.smart.utils.Constants
+import com.example.smart.utils.LoadingDialogFragment
+import com.google.firebase.firestore.FirebaseFirestore
+import javax.inject.Inject
+import javax.inject.Named
 
 class IssueListFragment : Fragment() {
+    @Inject
+    @Named("FirebaseFireStore.Instance")
+    lateinit var fireStore: FirebaseFirestore
+
+    private var retrievedItemsInfo: ArrayList<FacilityInfoModel> = arrayListOf()
+    private var loadingDialog: LoadingDialogFragment? = null
     private val viewModel: IssueListViewModel by viewModels()
     private lateinit var binding: FragmentIssueListBinding
+    private var facilityInfo: FacilityInfoAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentIssueListBinding.inflate(inflater, container, false)
+        retrieveDataFromDB()
 
         binding.apply {
             val adapter = FacilityInfoAdapter() {
 
             }
-            adapter.setItem(getDummyFacilityInfoList())
+            adapter.setItem(retrievedItemsInfo)
             rvListItems.adapter = adapter
         }
 
         return binding.root
     }
 
-    private fun getDummyFacilityInfoList() = arrayListOf(
-        FacilityInfoModel("Main Hall", "Large multipurpose hall", "F001", "Leaking Roof", "Water leaking from ceiling near stage", "Pending", "2025-05-01", "U123", ""),
-        FacilityInfoModel("Library", "Second floor reading area", "F002", "Broken Lights", "Two lights not working", "In Progress", "2025-04-28", "U456", ""),
-        FacilityInfoModel("Gymnasium", "Basketball court facility", "F003", "Cracked Floor", "Floor has a noticeable crack", "Resolved", "2025-04-25", "U789", ""),
-        FacilityInfoModel("Computer Lab", "Lab 1 with 30 PCs", "F004", "No Internet", "Network down since morning", "Pending", "2025-04-30", "U321", ""),
-        FacilityInfoModel("Cafeteria", "Main canteen area", "F005", "Air Conditioning", "AC not functioning properly", "In Progress", "2025-05-02", "U654", "")
-    )
+    private fun retrieveDataFromDB() {
+        try {
+            //  show loading dialog
+            loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")
+            loadingDialog?.show(this.parentFragmentManager, "loading_dialog")
+
+            fireStore.collection(Constants.COLLECTION_REPORTS)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    for (document in querySnapshot) {
+                        retrievedItemsInfo.add(
+                            FacilityInfoModel(
+                                facilityID = document.get("facilityID").toString(),
+                                roomNumber = document.get("roomNumber").toString(),
+                                facilityName = document.get("facilityName").toString(),
+                                facilityNumber = document.get("facilityNumber").toString(),
+                                facilityDescription = document.get("facilityDescription").toString(),
+                                issueName = document.get("issueName").toString(),
+                                issueData = document.get("issueData").toString(),
+                                issueStatus = document.get("issueStatus").toString(),
+                                issueDescription = document.get("issueDescription").toString(),
+                                issueSubmitterID = document.get("issueSubmitterID").toString()
+                            )
+                        )
+                    }
+                    facilityInfo!!.setItem(retrievedItemsInfo)
+                    loadingDialog?.dismiss()
+                }
+        } catch (exception: Exception) {
+            Log.w("tag", "An error occurred: ${exception.message}")
+            loadingDialog?.dismiss()
+        }
+    }
 }

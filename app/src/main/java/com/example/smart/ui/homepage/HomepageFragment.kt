@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.smart.R
 import com.example.smart.databinding.FragmentHomepageBinding
+import com.example.smart.ui.adapters.FacilityHomeAdapter
 
 class HomepageFragment : Fragment() {
     private lateinit var binding: FragmentHomepageBinding

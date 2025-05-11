@@ -14,11 +14,28 @@ import com.example.smart.models.FacilityCommunityModel
 import com.example.smart.models.FacilityInfoModel
 import com.example.smart.ui.adapters.FacilityCommunityAdapter
 import com.example.smart.ui.adapters.FacilityInfoAdapter
+import com.example.smart.utils.Constants
 import com.example.smart.utils.Helper
+import com.example.smart.utils.LoadingDialogFragment
+import com.google.firebase.firestore.FirebaseFirestore
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
+import javax.inject.Named
 
+@AndroidEntryPoint
 class FacilityInfoFragment : Fragment() {
+    @Inject
+    @Named("FirebaseFireStore.Instance")
+    lateinit var fireStore: FirebaseFirestore
+
+    private var loadingDialog: LoadingDialogFragment? = null
     private val viewModel: FacilityInfoViewModel by viewModels()
     private lateinit var binding: FragmentFacilityInfoBinding
+    private var roomNumber = ""
+    private var facilityInfo: FacilityInfoAdapter? = null
+    private var facilityCommunity: FacilityCommunityAdapter? = null
+    private var retrievedItemsInfo: ArrayList<FacilityInfoModel> = arrayListOf()
+    private var retrievedItemsCommunity: ArrayList<FacilityCommunityModel> = arrayListOf()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -26,9 +43,11 @@ class FacilityInfoFragment : Fragment() {
     ): View {
         binding = FragmentFacilityInfoBinding.inflate(inflater, container, false)
 
+        roomNumber = arguments?.getString("roomNumber").toString()
+        retrieveDataFromDB()
+
         binding.apply {
-            val facilityItems = getDummyFacilityInfoList()
-            val facilityAdapter = FacilityInfoAdapter {
+            facilityInfo = FacilityInfoAdapter {
                 if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
                     val itemInfoBottomSheet = FacilityInfoBottomSheet()
                     itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
@@ -36,8 +55,8 @@ class FacilityInfoFragment : Fragment() {
                     FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
                 }
             }
-            facilityAdapter.setItem(facilityItems)
-            rvFacilityInfo.adapter = facilityAdapter
+            facilityInfo!!.setItem(retrievedItemsInfo)
+            rvFacilityInfo.adapter = facilityInfo
 
             cvCommunity.setOnClickListener {
                 // Set reports text to default black
@@ -50,9 +69,9 @@ class FacilityInfoFragment : Fragment() {
                 tvCommunity.setTextColor(ContextCompat.getColor(requireContext(), R.color.main_color))
                 cvCommunity.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.main_color_light))
 
-                val adapter = FacilityCommunityAdapter { }
-                adapter.setItem(getDummyCommunityList())
-                rvFacilityInfo.adapter = adapter
+                facilityCommunity = FacilityCommunityAdapter { }
+                facilityCommunity!!.setItem(retrievedItemsCommunity)
+                rvFacilityInfo.adapter = facilityCommunity
             }
 
             cvReports.setOnClickListener {
@@ -64,7 +83,7 @@ class FacilityInfoFragment : Fragment() {
                 tvCommunity.setTextColor(ContextCompat.getColor(requireContext(), R.color.black_light))
                 cvCommunity.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
 
-                val adapter = FacilityInfoAdapter {
+                facilityInfo = FacilityInfoAdapter {
                     if (Helper.userRole.lowercase() != "staff" && Helper.userRole.lowercase() != "officer") {
                         val itemInfoBottomSheet = FacilityInfoBottomSheet()
                         itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet")
@@ -72,28 +91,65 @@ class FacilityInfoFragment : Fragment() {
                         FacilityStaffFragment().show(parentFragmentManager, "item_info_staff_bottom_sheet")
                     }
                 }
-                adapter.setItem(getDummyFacilityInfoList())
-                rvFacilityInfo.adapter = adapter
+                facilityInfo!!.setItem(retrievedItemsInfo)
+                rvFacilityInfo.adapter = facilityInfo
             }
         }
 
         return binding.root
     }
 
-    // Dummy data helpers
-    private fun getDummyFacilityInfoList() = arrayListOf(
-        FacilityInfoModel("Main Hall", "Large multipurpose hall", "F001", "Leaking Roof", "Water leaking from ceiling near stage", "Pending", "2025-05-01", "U123", ""),
-        FacilityInfoModel("Library", "Second floor reading area", "F002", "Broken Lights", "Two lights not working", "In Progress", "2025-04-28", "U456", ""),
-        FacilityInfoModel("Gymnasium", "Basketball court facility", "F003", "Cracked Floor", "Floor has a noticeable crack", "Resolved", "2025-04-25", "U789", ""),
-        FacilityInfoModel("Computer Lab", "Lab 1 with 30 PCs", "F004", "No Internet", "Network down since morning", "Pending", "2025-04-30", "U321", ""),
-        FacilityInfoModel("Cafeteria", "Main canteen area", "F005", "Air Conditioning", "AC not functioning properly", "In Progress", "2025-05-02", "U654", "")
-    )
+    private fun retrieveDataFromDB() {
+        try {
+            //  show loading dialog
+            loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")
+            loadingDialog?.show(this.parentFragmentManager, "loading_dialog")
 
-    private fun getDummyCommunityList() = arrayListOf(
-        FacilityCommunityModel("F001", "John Doe", "2025-05-01", "Scheduled maintenance will occur tomorrow.", "Facility Manager"),
-        FacilityCommunityModel("F002", "Jane Smith", "2025-04-30", "Power outage reported, currently under investigation.", "Resident"),
-        FacilityCommunityModel("F003", "Carlos Reyes", "2025-04-29", "New equipment will be installed next week.", "Technician"),
-        FacilityCommunityModel("F004", "Maria Garcia", "2025-04-28", "Facility closed for cleaning this weekend.", "Facility Manager"),
-        FacilityCommunityModel("F005", "Liam Wong", "2025-04-27", "Please report any issues with the water dispenser.", "Resident")
-    )
+            fireStore.collection(Constants.COLLECTION_REPORTS)
+                .whereEqualTo("roomNumber", roomNumber)
+                .get()
+                .addOnSuccessListener { querySnapshot ->
+                    for (document in querySnapshot) {
+                        retrievedItemsInfo.add(
+                            FacilityInfoModel(
+                                facilityID = document.get("facilityID").toString(),
+                                roomNumber = document.get("roomNumber").toString(),
+                                facilityName = document.get("facilityName").toString(),
+                                facilityNumber = document.get("facilityNumber").toString(),
+                                facilityDescription = document.get("facilityDescription").toString(),
+                                issueName = document.get("issueName").toString(),
+                                issueData = document.get("issueData").toString(),
+                                issueStatus = document.get("issueStatus").toString(),
+                                issueDescription = document.get("issueDescription").toString(),
+                                issueSubmitterID = document.get("issueSubmitterID").toString()
+                            )
+                        )
+                    }
+                    facilityInfo!!.setItem(retrievedItemsInfo)
+
+                    fireStore.collection(Constants.COLLECTION_COMMUNITY)
+                        .whereEqualTo("roomNumber", roomNumber)
+                        .get()
+                        .addOnSuccessListener { querySnapshotCommunity ->
+                            for (documentCommunity in querySnapshotCommunity) {
+                                retrievedItemsCommunity.add(
+                                    FacilityCommunityModel(
+                                        facilityID = documentCommunity.get("facilityID").toString(),
+                                        roomNumber = documentCommunity.get("roomNumber").toString(),
+                                        communitySender = documentCommunity.get("communitySender").toString(),
+                                        communityDate = documentCommunity.get("communityDate").toString(),
+                                        communityContent = documentCommunity.get("communityContent").toString(),
+                                        communitySenderRole = documentCommunity.get("communitySenderRole").toString()
+                                    )
+                                )
+                                facilityCommunity!!.setItem(retrievedItemsCommunity)
+                            }
+                            loadingDialog?.dismiss()
+                        }
+                }
+        } catch (exception: Exception) {
+            Log.w("tag", "An error occurred: ${exception.message}")
+            loadingDialog?.dismiss()
+        }
+    }
 }

@@ -2,6 +2,7 @@ package com.example.smart.models
 
 data class FacilityInfoModel(
     val facilityID: String?,
+    val roomNumber: String?,
     val facilityName: String?,
     val facilityNumber: String?,
     val facilityDescription: String?,

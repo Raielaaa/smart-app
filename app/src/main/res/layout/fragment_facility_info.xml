@@ -134,6 +134,7 @@
         android:layout_marginEnd="@dimen/_25sdp"
         android:fontFamily="@font/poppins"
         android:text="@string/item_content"
+        android:justificationMode="inter_word"
         android:textSize="@dimen/_8ssp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/textView35"

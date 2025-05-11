@@ -186,418 +186,424 @@
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.5" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvListItem1"
+            <androidx.recyclerview.widget.RecyclerView
+                android:paddingTop="@dimen/_5sdp"
+                android:paddingBottom="@dimen/_8sdp"
+                android:id="@+id/rvFacilities"
                 android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView16"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView33"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />
-
-                    <TextView
-                        android:id="@+id/textView34"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView33"
-                        app:layout_constraintTop_toBottomOf="@+id/textView33" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toTopOf="@+id/cvListItem1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView166"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView333"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView166" />
-
-                    <TextView
-                        android:id="@+id/textView344"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView333"
-                        app:layout_constraintTop_toBottomOf="@+id/textView333" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvListItem2"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvListItem1">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView26"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic3"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView43"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView26" />
-
-                    <TextView
-                        android:id="@+id/textView44"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView43"
-                        app:layout_constraintTop_toBottomOf="@+id/textView43" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toTopOf="@+id/cvListItem2">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView46"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic4"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView53"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView46" />
-
-                    <TextView
-                        android:id="@+id/textView54"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView53"
-                        app:layout_constraintTop_toBottomOf="@+id/textView53" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvListItem3"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvListItem2">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView66"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic5"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView63"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView66" />
-
-                    <TextView
-                        android:id="@+id/textView64"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView63"
-                        app:layout_constraintTop_toBottomOf="@+id/textView63" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toTopOf="@+id/cvListItem3">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView76"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic6"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView73"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView76" />
-
-                    <TextView
-                        android:id="@+id/textView74"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView73"
-                        app:layout_constraintTop_toBottomOf="@+id/textView73" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cvListItem8"
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginTop="@dimen/_10sdp"
-                android:layout_marginEnd="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toStartOf="@+id/guideline4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/cvListItem3">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView86"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView83"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView86" />
-
-                    <TextView
-                        android:id="@+id/textView84"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView83"
-                        app:layout_constraintTop_toBottomOf="@+id/textView83" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="0dp"
-                android:layout_height="@dimen/_85sdp"
-                android:layout_marginStart="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_10sdp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/guideline4"
-                app:layout_constraintTop_toTopOf="@+id/cvListItem8">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView96"
-                        android:layout_width="0dp"
-                        android:layout_height="@dimen/_45sdp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/list_pic2"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textView93"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="@dimen/_10sdp"
-                        android:layout_marginTop="@dimen/_5sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Room number: 4039"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imageView96" />
-
-                    <TextView
-                        android:id="@+id/textView94"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/_2sdp"
-                        android:fontFamily="@font/poppins"
-                        android:text="Section Cybernetics"
-                        android:textSize="@dimen/_8ssp"
-                        app:layout_constraintStart_toStartOf="@+id/textView93"
-                        app:layout_constraintTop_toBottomOf="@+id/textView93" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_marginTop="@dimen/_8sdp"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_25sdp"
-                app:layout_constraintTop_toBottomOf="@+id/cvListItem8"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                android:orientation="vertical"
+                tools:listitem="@layout/rv_facility_home_item"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/cvListItem1"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toTopOf="parent">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView16"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic1"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView33"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView16" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView34"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView33"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView33" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginStart="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/cvListItem1">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView166"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic2"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView333"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView166" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView344"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView333"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView333" />-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/cvListItem2"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/cvListItem1">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView26"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic3"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView43"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView26" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView44"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView43"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView43" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginStart="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/cvListItem2">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView46"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic4"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView53"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView46" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView54"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView53"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView53" />-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/cvListItem3"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/cvListItem2">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView66"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic5"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView63"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView66" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView64"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView63"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView63" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginStart="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/cvListItem3">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView76"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic6"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView73"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView76" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView74"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView73"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView73" />-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:id="@+id/cvListItem8"-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginTop="@dimen/_10sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintStart_toStartOf="parent"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/cvListItem3">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView86"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic1"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView83"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView86" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView84"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView83"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView83" />-->
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
+
+            <!--            <androidx.cardview.widget.CardView-->
+            <!--                android:layout_width="0dp"-->
+            <!--                android:layout_height="@dimen/_85sdp"-->
+            <!--                android:layout_marginStart="@dimen/_8sdp"-->
+            <!--                app:cardCornerRadius="@dimen/_10sdp"-->
+            <!--                app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                app:layout_constraintStart_toStartOf="@+id/guideline4"-->
+            <!--                app:layout_constraintTop_toTopOf="@+id/cvListItem8">-->
+
+            <!--                <androidx.constraintlayout.widget.ConstraintLayout-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="match_parent">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/imageView96"-->
+            <!--                        android:layout_width="0dp"-->
+            <!--                        android:layout_height="@dimen/_45sdp"-->
+            <!--                        android:scaleType="centerCrop"-->
+            <!--                        android:src="@drawable/list_pic2"-->
+            <!--                        app:layout_constraintEnd_toEndOf="parent"-->
+            <!--                        app:layout_constraintHorizontal_bias="0.5"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toTopOf="parent" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView93"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginStart="@dimen/_10sdp"-->
+            <!--                        android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Room number: 4039"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="parent"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/imageView96" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:id="@+id/textView94"-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_marginTop="@dimen/_2sdp"-->
+            <!--                        android:fontFamily="@font/poppins"-->
+            <!--                        android:text="Section Cybernetics"-->
+            <!--                        android:textSize="@dimen/_8ssp"-->
+            <!--                        app:layout_constraintStart_toStartOf="@+id/textView93"-->
+            <!--                        app:layout_constraintTop_toBottomOf="@+id/textView93" />-->
+
+            <!--                </androidx.constraintlayout.widget.ConstraintLayout>-->
+            <!--            </androidx.cardview.widget.CardView>-->
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

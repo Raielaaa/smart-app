@@ -6,5 +6,8 @@ class Constants {
         const val COLLECTION_SPECIAL_CODE = "smart-app-special-code"
         const val DOCUMENT_SPECIAL_CODE = "system-code"
         const val COLLECTION_USER_ACCOUNTS = "smart-app-user-accounts"
+        const val COLLECTION_FACILITIES = "smart-app-facilities-info"
+        const val COLLECTION_REPORTS = "smart-app-reports"
+        const val COLLECTION_COMMUNITY = "smart-app-community"
     }
 }

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_85sdp"
+    android:layout_marginHorizontal="@dimen/_3sdp"
+    android:layout_marginBottom="@dimen/_7sdp"
+    android:layout_marginTop="@dimen/_3sdp"
+    app:cardCornerRadius="@dimen/_7sdp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/_45sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/room_layout"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvRoomNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Room number: 4039"
+            android:textSize="@dimen/_8ssp"
+            android:fontFamily="@font/poppins"
+            android:layout_marginTop="@dimen/_5sdp"
+            app:layout_constraintTop_toBottomOf="@id/imageView"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="@dimen/_10sdp"/>
+
+        <TextView
+            android:id="@+id/tvFloorNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Floor number: 03"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintTop_toBottomOf="@id/tvRoomNumber"
+            app:layout_constraintStart_toStartOf="@id/tvRoomNumber"
+            android:layout_marginTop="@dimen/_2sdp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
