@@ -95,7 +95,8 @@ class LoginFragment : Fragment() {
                                                     firstName.toString(),
                                                     lastName.toString(),
                                                     email.toString(),
-                                                    Helper.userRole
+                                                    Helper.userRole,
+                                                    "0"
                                                 )
 
                                                 fireStore.collection("smart-app-user-accounts")

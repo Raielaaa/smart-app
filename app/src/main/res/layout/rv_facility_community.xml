@@ -52,13 +52,11 @@
                 app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
             <TextView
-                android:layout_marginTop="@dimen/_8sdp"
                 android:id="@+id/tvContent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:ellipsize="end"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:fontFamily="@font/poppins"
-                android:maxLines="2"
                 android:text="@string/item_community_comment"
 
                 android:textSize="@dimen/_8ssp"

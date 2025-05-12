@@ -33,7 +33,7 @@
                 android:src="@drawable/logo_solid" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvHeaderNameProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_22sdp"
@@ -42,7 +42,7 @@
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/tvHeaderEmailProfile"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -137,7 +137,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
 
             <TextView
-                android:id="@+id/textView72"
+                android:id="@+id/tvFullNameProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_12sdp"
@@ -161,7 +161,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView71" />
 
             <TextView
-                android:id="@+id/textView76"
+                android:id="@+id/tvEmailProfile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
@@ -170,7 +170,7 @@
                 android:text="@string/profile_email"
                 android:textSize="@dimen/_8ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView72" />
+                app:layout_constraintTop_toBottomOf="@+id/tvFullNameProfile" />
 
             <TextView
                 android:id="@+id/textView77"
@@ -185,7 +185,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView75" />
 
             <TextView
-                android:id="@+id/textView78"
+                android:id="@+id/tvIssuesSent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_6sdp"
@@ -194,7 +194,7 @@
                 android:text="@string/profile_amount"
                 android:textSize="@dimen/_8ssp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView76" />
+                app:layout_constraintTop_toBottomOf="@+id/tvEmailProfile" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.cardview.widget.CardView>
 
