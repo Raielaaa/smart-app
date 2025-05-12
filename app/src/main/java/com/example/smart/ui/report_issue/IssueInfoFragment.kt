@@ -205,10 +205,34 @@ class IssueInfoFragment : Fragment() {
                                             .document(roomNumber)
                                             .update("reportCount", newCount.toString())
                                             .addOnSuccessListener {
-                                                loadingDialog?.dismiss()
-                                                ShowInfoDialogFragment("Success", "Your issue has been submitted successfully.")
-                                                    .show(parentFragmentManager, "info_dialog")
-                                                findNavController().navigate(R.id.homeFragment)
+
+                                                //  update issues sent by the sender
+                                                val userRef = fireStore.collection(Constants.COLLECTION_USER_ACCOUNTS)
+                                                    .document(submitterId)
+
+                                                userRef.get()
+                                                    .addOnSuccessListener { document ->
+                                                        if (document.exists()) {
+                                                            val currentIssuesSentStr = document.getString("issuesSent") ?: "0"
+                                                            val currentIssuesSent = currentIssuesSentStr.toIntOrNull() ?: 0
+                                                            val updatedIssuesSent = currentIssuesSent + 1
+
+                                                            userRef.update("issuesSent", updatedIssuesSent.toString())
+                                                                .addOnSuccessListener {
+                                                                    Log.d("mytag", "issuesSent updated successfully.")
+                                                                    loadingDialog?.dismiss()
+                                                                    ShowInfoDialogFragment("Success", "Your issue has been submitted successfully.")
+                                                                        .show(parentFragmentManager, "info_dialog")
+                                                                    findNavController().navigate(R.id.homeFragment)
+                                                                }
+                                                                .addOnFailureListener { e ->
+                                                                    Log.e("mytag", "Failed to update issuesSent", e)
+                                                                }
+                                                        }
+                                                    }
+                                                    .addOnFailureListener { e ->
+                                                        Log.e("mytag", "Failed to retrieve user data", e)
+                                                    }
                                             }
                                             .addOnFailureListener { exception ->
                                                 loadingDialog?.dismiss()
@@ -222,13 +246,13 @@ class IssueInfoFragment : Fragment() {
                             }
                             .addOnFailureListener { exception ->
                                 loadingDialog?.dismiss()
-                                Log.w("FirestoreError", "An error occurred: ${exception.message}")
+                                Log.w("mytag", "An error occurred: ${exception.message}")
                             }
                     }
                 }
                 .addOnFailureListener { exception ->
                     loadingDialog?.dismiss()
-                    Log.e("UploadError", "Image upload failed: ${exception.message}")
+                    Log.e("mytag", "Image upload failed: ${exception.message}")
                 }
         }
 
