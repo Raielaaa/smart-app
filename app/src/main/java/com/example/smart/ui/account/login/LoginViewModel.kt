@@ -81,6 +81,8 @@ class LoginViewModel @Inject constructor(
                                 }.addOnFailureListener { exception ->
                                     // show authentication failure
                                     displayToastMessage(exception.toString(), hostFragment)
+                                    ShowInfoDialogFragment("Warning", "Account not found, please try again")
+                                        .show(hostFragment.parentFragmentManager, "info_dialog")
                                     // Dismiss dialog
                                     loadingDialog?.dismiss()
                                 }
