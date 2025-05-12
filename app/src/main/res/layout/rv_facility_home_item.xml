@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_85sdp"
     android:layout_marginHorizontal="@dimen/_3sdp"
@@ -27,13 +28,13 @@
             android:id="@+id/tvRoomNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Room number: 4039"
-            android:textSize="@dimen/_8ssp"
-            android:fontFamily="@font/poppins"
+            android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
-            app:layout_constraintTop_toBottomOf="@id/imageView"
+            android:text="Room number: 4039"
+            android:fontFamily="@font/poppins"
+            android:textSize="@dimen/_8ssp"
             app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="@dimen/_10sdp"/>
+            app:layout_constraintTop_toBottomOf="@id/imageView" />
 
         <TextView
             android:id="@+id/tvFloorNumber"
@@ -45,6 +46,18 @@
             app:layout_constraintTop_toBottomOf="@id/tvRoomNumber"
             app:layout_constraintStart_toStartOf="@id/tvRoomNumber"
             android:layout_marginTop="@dimen/_2sdp"/>
+
+        <TextView
+            android:id="@+id/tvIssueCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView"
+            android:textColor="@color/main_color"
+            android:fontFamily="@font/poppins_bold"
+            android:textSize="@dimen/_8ssp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvRoomNumber" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

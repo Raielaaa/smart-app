@@ -28,6 +28,7 @@ class FacilityHomeAdapter(
             binding.apply {
                 tvRoomNumber.text = "Room number: ${items.roomNumber}"
                 tvFloorNumber.text = "Floor number: ${items.roomNumber[0]}"
+                tvIssueCount.text = items.reportCount
             }
             binding.root.setOnClickListener {
                 clickedListener(items)

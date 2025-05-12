@@ -1,7 +1,7 @@
 package com.example.smart.models
 
 data class FacilityCommunityModel(
-    val facilityID: String?,
+    val issueTitle: String?,
     val roomNumber: String?,
     val communitySender: String?,
     val communityDate: String?,

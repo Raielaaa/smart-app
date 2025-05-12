@@ -193,10 +193,32 @@ class IssueInfoFragment : Fragment() {
                         fireStore.collection(Constants.COLLECTION_REPORTS)
                             .add(data)
                             .addOnSuccessListener {
-                                loadingDialog?.dismiss()
-                                ShowInfoDialogFragment("Success", "Your issue has been submitted successfully.")
-                                    .show(parentFragmentManager, "info_dialog")
-                                findNavController().navigate(R.id.homeFragment)
+                                // update roomNumber's reportCount
+                                fireStore.collection(Constants.COLLECTION_FACILITIES)
+                                    .document(roomNumber)
+                                    .get()
+                                    .addOnSuccessListener { documentSnapshot ->
+                                        val currentCountString = documentSnapshot.getString("reportCount") ?: "0"
+                                        val newCount = (currentCountString.toIntOrNull() ?: 0) + 1
+
+                                        fireStore.collection(Constants.COLLECTION_FACILITIES)
+                                            .document(roomNumber)
+                                            .update("reportCount", newCount.toString())
+                                            .addOnSuccessListener {
+                                                loadingDialog?.dismiss()
+                                                ShowInfoDialogFragment("Success", "Your issue has been submitted successfully.")
+                                                    .show(parentFragmentManager, "info_dialog")
+                                                findNavController().navigate(R.id.homeFragment)
+                                            }
+                                            .addOnFailureListener { exception ->
+                                                loadingDialog?.dismiss()
+                                                Log.w("mytag", "An error occurred while updating count: ${exception.message}")
+                                            }
+                                    }
+                                    .addOnFailureListener { exception ->
+                                        loadingDialog?.dismiss()
+                                        Log.w("mytag", "An error occurred while retrieving count: ${exception.message}")
+                                    }
                             }
                             .addOnFailureListener { exception ->
                                 loadingDialog?.dismiss()

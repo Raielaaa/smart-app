@@ -43,6 +43,8 @@ class IssueListFragment : Fragment() {
     ): View {
         binding = FragmentIssueListBinding.inflate(inflater, container, false)
         retrieveDataFromDB()
+        binding.textView30.text = "${Helper.issueCount} facility issues detected. Please review them in the Issues tab."
+        binding.textView29.text = Helper.userRole.replaceFirstChar { it.uppercaseChar() }
 
         facilityInfo = FacilityInfoAdapter { item ->
             loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")

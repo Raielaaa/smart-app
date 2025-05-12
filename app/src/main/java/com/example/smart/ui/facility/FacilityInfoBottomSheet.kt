@@ -80,7 +80,7 @@ class FacilityInfoBottomSheet(
             tvRoleBottom.setTextColor(ContextCompat.getColor(requireContext(), R.color.student_main))
 
             cvAddNote.setOnClickListener {
-                val itemInfoBottomSheet = FacilityInfoBottomSheetSendNote()
+                val itemInfoBottomSheet = FacilityInfoBottomSheetSendNote(facilityInfoModel)
                 this@FacilityInfoBottomSheet.dismiss()
 
                 itemInfoBottomSheet.show(parentFragmentManager, "item_info_bottom_sheet_send_note")

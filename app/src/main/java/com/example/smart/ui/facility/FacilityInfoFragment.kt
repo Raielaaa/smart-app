@@ -46,6 +46,7 @@ class FacilityInfoFragment : Fragment() {
         binding = FragmentFacilityInfoBinding.inflate(inflater, container, false)
 
         roomNumber = arguments?.getString("roomNumber").toString()
+        facilityCommunity = FacilityCommunityAdapter { }
         retrieveDataFromDB()
 
         binding.apply {
@@ -97,7 +98,6 @@ class FacilityInfoFragment : Fragment() {
                 tvCommunity.setTextColor(ContextCompat.getColor(requireContext(), R.color.main_color))
                 cvCommunity.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.main_color_light))
 
-                facilityCommunity = FacilityCommunityAdapter { }
                 facilityCommunity!!.setItem(retrievedItemsCommunity)
                 rvFacilityInfo.adapter = facilityCommunity
             }
@@ -184,7 +184,7 @@ class FacilityInfoFragment : Fragment() {
                             for (documentCommunity in querySnapshotCommunity) {
                                 retrievedItemsCommunity.add(
                                     FacilityCommunityModel(
-                                        facilityID = documentCommunity.get("facilityID").toString(),
+                                        issueTitle = documentCommunity.get("issueTitle").toString(),
                                         roomNumber = documentCommunity.get("roomNumber").toString(),
                                         communitySender = documentCommunity.get("communitySender").toString(),
                                         communityDate = documentCommunity.get("communityDate").toString(),
@@ -192,9 +192,11 @@ class FacilityInfoFragment : Fragment() {
                                         communitySenderRole = documentCommunity.get("communitySenderRole").toString()
                                     )
                                 )
-                                facilityCommunity!!.setItem(retrievedItemsCommunity)
                             }
+                            facilityCommunity!!.setItem(retrievedItemsCommunity)
                             loadingDialog?.dismiss()
+                        }.addOnFailureListener { exception ->
+                            Log.w("tag", "An error occurred - community: ${exception.message}")
                         }
                 }
         } catch (exception: Exception) {

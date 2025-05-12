@@ -24,7 +24,7 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/textView38"
+                android:id="@+id/tvFullName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
@@ -36,24 +36,24 @@
                 android:singleLine="true"
                 android:text="@string/item_community_name"
                 android:textSize="@dimen/_8ssp"
-                app:layout_constraintEnd_toStartOf="@+id/cardView4"
+                app:layout_constraintEnd_toStartOf="@+id/cvRole"
                 app:layout_constraintStart_toEndOf="@+id/cardView5"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView40"
+                android:id="@+id/tvDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
                 android:text="@string/item_community_date_time"
                 android:textColor="@color/grey_heavy"
                 android:textSize="@dimen/_8ssp"
-                app:layout_constraintStart_toStartOf="@+id/textView38"
-                app:layout_constraintTop_toBottomOf="@+id/textView38" />
+                app:layout_constraintStart_toStartOf="@+id/tvFullName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFullName" />
 
             <TextView
                 android:layout_marginTop="@dimen/_8sdp"
-                android:id="@+id/textView42"
+                android:id="@+id/tvContent"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -62,31 +62,31 @@
                 android:text="@string/item_community_comment"
 
                 android:textSize="@dimen/_8ssp"
-                app:layout_constraintEnd_toEndOf="@+id/cardView4"
-                app:layout_constraintStart_toStartOf="@+id/textView40"
-                app:layout_constraintTop_toBottomOf="@+id/textView40" />
+                app:layout_constraintEnd_toEndOf="@+id/cvRole"
+                app:layout_constraintStart_toStartOf="@+id/tvDate"
+                app:layout_constraintTop_toBottomOf="@+id/tvDate" />
 
             <androidx.cardview.widget.CardView
-                android:id="@+id/cardView4"
+                android:id="@+id/cvRole"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginEnd="@dimen/_8sdp"
-                app:cardBackgroundColor="@color/green_bg"
+                app:cardBackgroundColor="@color/student_bg"
                 app:cardCornerRadius="@dimen/_7sdp"
                 app:cardElevation="0dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <TextView
-                    android:id="@+id/textView45"
+                    android:id="@+id/tvRole"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_15sdp"
                     android:layout_marginVertical="@dimen/_4sdp"
                     android:fontFamily="@font/poppins_bold"
                     android:text="@string/item_completed"
-                    android:textColor="@color/green_main"
+                    android:textColor="@color/student_main"
                     android:textSize="@dimen/_8ssp" />
             </androidx.cardview.widget.CardView>
 
@@ -108,7 +108,7 @@
                     android:paddingVertical="@dimen/_8sdp">
 
                     <TextView
-                        android:id="@+id/textView46"
+                        android:id="@+id/tvInitial"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/poppins_bold"

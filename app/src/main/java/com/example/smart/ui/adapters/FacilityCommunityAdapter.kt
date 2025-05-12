@@ -25,7 +25,11 @@ class FacilityCommunityAdapter(
     inner class FacilityCommunityAdapterViewModel(private val binding: RvFacilityCommunityBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(items: FacilityCommunityModel, clickedListener: () -> Unit) {
             binding.apply {
-
+                tvFullName.text = items.communitySender
+                tvContent.text = "${items.issueTitle}: ${items.communityContent}"
+                tvDate.text = items.communityDate
+                tvRole.text = items.communitySenderRole.toString().replaceFirstChar { it.uppercaseChar() }
+                tvInitial.text = items.communitySender?.get(0).toString().uppercase()
             }
             binding.root.setOnClickListener {
                 clickedListener()

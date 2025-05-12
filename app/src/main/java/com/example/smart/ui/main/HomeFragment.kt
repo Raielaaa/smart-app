@@ -14,6 +14,7 @@ import com.example.smart.databinding.FragmentHomeBinding
 import com.example.smart.models.FacilityHomeModel
 import com.example.smart.ui.adapters.FacilityHomeAdapter
 import com.example.smart.utils.Constants
+import com.example.smart.utils.Helper
 import com.example.smart.utils.LoadingDialogFragment
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
@@ -35,9 +36,27 @@ class HomeFragment : Fragment() {
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
 
+        initIssueCount(binding)
         initBottomRv(binding)
+        binding.apply {
+            textView29.text = Helper.userRole.replaceFirstChar { it.uppercaseChar() }
+        }
 
         return binding.root
+    }
+
+    private fun initIssueCount(binding: FragmentHomeBinding) {
+        fireStore.collection(Constants.COLLECTION_REPORTS)
+            .get()
+            .addOnSuccessListener { querySnapshot ->
+                var issueCount: Int = 0
+                for (document in querySnapshot) {
+                    if (document.getString("issueStatus") != "Completed") issueCount++
+                }
+
+                Helper.issueCount = issueCount.toString()
+                binding.textView30.text = "$issueCount facility issues detected. Please review them in the Issues tab."
+            }
     }
 
     private fun initBottomRv(binding: FragmentHomeBinding) {
@@ -65,8 +84,9 @@ class HomeFragment : Fragment() {
                 .addOnSuccessListener { querySnapshot ->
                     for (document in querySnapshot) {
                         val roomNumber = document.getString("roomNumber") ?: ""
+                        val reportCount = document.getString("reportCount") ?: ""
 
-                        val facility = FacilityHomeModel(roomNumber)
+                        val facility = FacilityHomeModel(roomNumber, reportCount)
                         roomList.add(facility)
                     }
 
