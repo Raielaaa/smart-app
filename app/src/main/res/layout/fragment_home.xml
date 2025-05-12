@@ -34,7 +34,7 @@
                 android:src="@drawable/logo_solid" />
 
             <TextView
-                android:id="@+id/textView9"
+                android:id="@+id/tvHeaderNameHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/_22sdp"
@@ -43,7 +43,7 @@
                 android:textSize="@dimen/_10ssp" />
 
             <TextView
-                android:id="@+id/textView28"
+                android:id="@+id/tvHeaderEmailHome"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"

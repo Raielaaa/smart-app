@@ -10,6 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
 import com.example.smart.R
+import com.example.smart.databinding.FragmentHomeBinding
 import com.example.smart.databinding.FragmentIssueListBinding
 import com.example.smart.models.FacilityCommunityModel
 import com.example.smart.models.FacilityInfoModel
@@ -19,6 +20,7 @@ import com.example.smart.ui.facility.FacilityStaffFragment
 import com.example.smart.utils.Constants
 import com.example.smart.utils.Helper
 import com.example.smart.utils.LoadingDialogFragment
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -29,6 +31,10 @@ class IssueListFragment : Fragment() {
     @Inject
     @Named("FirebaseFireStore.Instance")
     lateinit var fireStore: FirebaseFirestore
+
+    @Inject
+    @Named("FirebaseAuth.Instance")
+    lateinit var firebaseAuth: FirebaseAuth
 
     private var retrievedItemsInfo: ArrayList<FacilityInfoModel> = arrayListOf()
     private var loadingDialog: LoadingDialogFragment? = null
@@ -45,6 +51,7 @@ class IssueListFragment : Fragment() {
         retrieveDataFromDB()
         binding.textView30.text = "${Helper.issueCount} facility issues detected. Please review them in the Issues tab."
         binding.textView29.text = Helper.userRole.replaceFirstChar { it.uppercaseChar() }
+        initHeader(binding)
 
         facilityInfo = FacilityInfoAdapter { item ->
             loadingDialog = LoadingDialogFragment("Loading", "Please wait while we retrieve all the necessary information.")
@@ -85,6 +92,24 @@ class IssueListFragment : Fragment() {
         setupClickListeners()
 
         return binding.root
+    }
+
+    private fun initHeader(binding: FragmentIssueListBinding) {
+        fireStore.collection(Constants.COLLECTION_USER_ACCOUNTS)
+            .document(firebaseAuth.currentUser?.uid.toString())
+            .get()
+            .addOnSuccessListener { result ->
+                val fullName = "${result.getString("firstNameModel")} ${result.getString("lastNameModel")}"
+                val emailAddress = result.getString("emailModel")
+                val issuesSent = result.getString("issuesSent")
+
+                binding.apply {
+                    tvHeaderNameList.text = "Hello, ${fullName.split(" ")[0]}"
+                    tvHeaderEmailList.text = emailAddress
+                }
+            }.addOnFailureListener { exception ->
+                Log.w("tag", "An error occurred: ${exception.message}")
+            }
     }
 
     private fun retrieveDataFromDB() {
