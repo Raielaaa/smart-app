@@ -1,21 +1,23 @@
 package com.example.smart.main
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import com.example.smart.R
 import com.example.smart.databinding.ActivityMainBinding
-import dagger.hilt.android.AndroidEntryPoint
-import io.ak1.BubbleTabBar
-import androidx.navigation.ui.NavigationUI.onNavDestinationSelected
 import com.example.smart.ui.report_issue.GuideBottomSheet
 import com.example.smart.utils.Helper
 import com.example.smart.utils.ShowInfoDialogFragment
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
+import dagger.hilt.android.AndroidEntryPoint
+import io.ak1.BubbleTabBar
+
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {

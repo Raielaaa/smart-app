@@ -1,6 +1,7 @@
 package com.example.smart.ui.account.login
 
 import android.content.Intent
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModel
@@ -13,6 +14,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
 import com.google.rpc.Help
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
@@ -73,10 +75,21 @@ class LoginViewModel @Inject constructor(
                                     if (task.isSuccessful) {
                                         // Navigate to the appropriate screen based on the user type
                                         // Dismiss dialog
-                                        loadingDialog?.dismiss()
+                                        FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
+                                            FirebaseFirestore.getInstance().collection("smart-app-user-accounts")
+                                                .document(task.result.user?.uid.toString())
+                                                .update("fcmToken", token)
+                                                .addOnSuccessListener {
+                                                    Log.d("mytag", token)
+                                                    loadingDialog?.dismiss()
 
-                                        hostFragment.findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
-                                        displayToastMessage("Login successful", hostFragment)
+                                                    hostFragment.findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                                                    displayToastMessage("Login successful", hostFragment)
+                                                }.addOnFailureListener { exception ->
+                                                    loadingDialog?.dismiss()
+                                                    Log.w("mytag", "Error: ${exception.message}")
+                                                }
+                                        }
                                     }
                                 }.addOnFailureListener { exception ->
                                     // show authentication failure

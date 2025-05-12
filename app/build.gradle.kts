@@ -115,4 +115,7 @@ dependencies {
 
     //  Gson
     implementation("com.google.code.gson:gson:2.9.0")
+
+    // Firebase Messaging
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 }

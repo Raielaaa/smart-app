@@ -24,6 +24,7 @@ import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 import javax.inject.Named
@@ -105,8 +106,20 @@ class LoginFragment : Fragment() {
                                                     .set(userData)
                                                     .addOnSuccessListener {
                                                         displayToastMessage("Register successful", this@LoginFragment)
-                                                        loadingDialog?.dismiss()
-                                                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+
+                                                        FirebaseMessaging.getInstance().token.addOnSuccessListener { token ->
+                                                            FirebaseFirestore.getInstance().collection("smart-app-user-accounts")
+                                                                .document(uid.toString())
+                                                                .update("fcmToken", token)
+                                                                .addOnSuccessListener {
+                                                                    Log.d("mytag", token)
+                                                                    loadingDialog?.dismiss()
+                                                                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                                                                }.addOnFailureListener { exception ->
+                                                                    loadingDialog?.dismiss()
+                                                                    displayToastMessage("mytag: $exception", this@LoginFragment)
+                                                                }
+                                                        }
                                                     }.addOnFailureListener { exception ->
                                                         loadingDialog?.dismiss()
                                                         displayToastMessage("Error: $exception", this@LoginFragment)
