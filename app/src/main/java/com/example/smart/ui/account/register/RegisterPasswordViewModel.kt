@@ -50,7 +50,8 @@ class RegisterPasswordViewModel @Inject constructor(
                             lastName,
                             email,
                             role,
-                            "0"
+                            "0",
+                            ""
                         )
 
                         //  inserting user credentials to FireStore

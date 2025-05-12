@@ -6,5 +6,6 @@ data class RegisterUserDataModel(
     val lastNameModel: String,
     val emailModel: String,
     val roleModel: String,
-    val issuesSent: String
+    val issuesSent: String,
+    val profileImageLink: String
 )
