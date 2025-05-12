@@ -84,7 +84,7 @@ class FacilityStaffFragment(
                 cvOngoing.setCardBackgroundColor(ContextCompat.getColor(requireContext(), R.color.white))
             }
 
-            when (facilityInfoModel.issueStatus?.lowercase()) {
+            when (facilityInfoModel.issueStatus.lowercase()) {
                 "pending" -> binding.cvPending.performClick()
                 "ongoing" -> binding.cvOngoing.performClick()
                 "completed" -> binding.cvCompleted.performClick()
