@@ -1,6 +1,5 @@
 package com.example.smart.ui.main
 
-import androidx.fragment.app.viewModels
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -41,6 +40,7 @@ class HomeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentHomeBinding.inflate(inflater, container, false)
+
 
         initIssueCount(binding)
         initBottomRv(binding)

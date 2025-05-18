@@ -118,4 +118,10 @@ dependencies {
 
     // Firebase Messaging
     implementation("com.google.firebase:firebase-messaging:23.4.1")
+
+    // firebase cloud messaging
+    implementation("com.google.firebase:firebase-functions-ktx")
+
+    // volley
+    implementation("com.android.volley:volley:1.2.1")
 }
