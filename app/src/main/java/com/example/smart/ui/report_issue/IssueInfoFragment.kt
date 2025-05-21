@@ -74,13 +74,11 @@ class IssueInfoFragment : Fragment() {
                 //  entry validations
                 val etTargetLab = etTargetLab.text.toString()
                 val etIssueTitle = etIssueTitle.text.toString()
-                val etYourName = etYourName.text.toString()
                 val etIssueDesc = etIssueDesc.text.toString()
 
                 if (
                     etTargetLab.isEmpty() ||
                     etIssueTitle.isEmpty() ||
-                    etYourName.isEmpty() ||
                     etIssueDesc.isEmpty()
                 ) {
                     ShowInfoDialogFragment("Warning", "Please fill all the required fields.")
@@ -90,7 +88,6 @@ class IssueInfoFragment : Fragment() {
                         showConfirmationDialog(
                             etTargetLab,
                             etIssueTitle,
-                            etYourName,
                             etIssueDesc,
                             imageUri
                         )
@@ -133,7 +130,6 @@ class IssueInfoFragment : Fragment() {
     private fun showConfirmationDialog(
         etTargetLab: String,
         etIssueTitle: String,
-        etYourName: String,
         etIssueDesc: String,
         imageUri: Uri
     ) {

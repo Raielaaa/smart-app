@@ -32,29 +32,30 @@ class FifthPageFragment : Fragment() {
             }
 
             tvSkip.setOnClickListener {
-                Log.d("FCM_TEST", "🔘 Sending request to Cloud Function...")
-
-                val requestQueue = Volley.newRequestQueue(requireContext())
-
-                val jsonRequest = JsonObjectRequest(
-                    Request.Method.POST,
-                    cloudFunctionUrl,
-                    null,  // You can also send a JSONObject body if needed
-                    { response ->
-                        val message = response.optString("message")
-                        val success = response.optBoolean("success")
-                        val tokens = response.optJSONArray("tokens")  // if returned
-                        Log.d("FCM_TEST", "✅ Success: $success - $message")
-                        Log.d("FCM_TEST", "📝 Tokens: $tokens")
-                        Log.d("FCM_TEST", "🗃 Data: $response")
-                    },
-                    { error ->
-                        val statusCode = error.networkResponse?.statusCode
-                        Log.e("FCM_TEST", "❌ Error: HTTP $statusCode", error)
-                    }
-                )
-
-                requestQueue.add(jsonRequest)
+                findNavController().navigate(R.id.action_fifthPageFragment_to_homeAccountFragment)
+//                Log.d("FCM_TEST", "🔘 Sending request to Cloud Function...")
+//
+//                val requestQueue = Volley.newRequestQueue(requireContext())
+//
+//                val jsonRequest = JsonObjectRequest(
+//                    Request.Method.POST,
+//                    cloudFunctionUrl,
+//                    null,  // You can also send a JSONObject body if needed
+//                    { response ->
+//                        val message = response.optString("message")
+//                        val success = response.optBoolean("success")
+//                        val tokens = response.optJSONArray("tokens")  // if returned
+//                        Log.d("FCM_TEST", "✅ Success: $success - $message")
+//                        Log.d("FCM_TEST", "📝 Tokens: $tokens")
+//                        Log.d("FCM_TEST", "🗃 Data: $response")
+//                    },
+//                    { error ->
+//                        val statusCode = error.networkResponse?.statusCode
+//                        Log.e("FCM_TEST", "❌ Error: HTTP $statusCode", error)
+//                    }
+//                )
+//
+//                requestQueue.add(jsonRequest)
             }
         }
 

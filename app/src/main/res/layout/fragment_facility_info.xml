@@ -34,6 +34,7 @@
                 app:layout_constraintVertical_bias="0.5" />
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cvListBack"
                 android:layout_marginStart="@dimen/_15sdp"
                 android:layout_marginTop="@dimen/_12sdp"
                 app:cardCornerRadius="100dp"
@@ -61,33 +62,6 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
 
-            <androidx.cardview.widget.CardView
-                android:layout_marginEnd="@dimen/_15sdp"
-                android:layout_marginTop="@dimen/_12sdp"
-                app:cardCornerRadius="100dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:padding="@dimen/_12sdp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                    <ImageView
-                        android:id="@+id/imageView18"
-                        android:layout_width="@dimen/_11sdp"
-                        android:layout_height="@dimen/_11sdp"
-                        android:src="@drawable/expand"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.5" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>

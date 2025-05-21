@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import com.example.smart.R
 import com.example.smart.databinding.FragmentFacilityInfoBinding
 import com.example.smart.models.FacilityCommunityModel
@@ -86,6 +87,10 @@ class FacilityInfoFragment : Fragment() {
             }
             facilityInfo!!.setItem(retrievedItemsInfo)
             rvFacilityInfo.adapter = facilityInfo
+
+            cvListBack.setOnClickListener {
+                findNavController().popBackStack()
+            }
 
             cvCommunity.setOnClickListener {
                 // Set reports text to default black

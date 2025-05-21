@@ -294,68 +294,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView621" />
 
-            <TextView
-                android:id="@+id/textView612"
-                android:layout_marginTop="@dimen/_25sdp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="@dimen/_8ssp"
-                android:fontFamily="@font/poppins_bold"
-                android:text="@string/issue_your_name"
-                app:layout_constraintTop_toBottomOf="@+id/etIssueDesc"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:layout_editor_absoluteY="367dp" />
-
-            <ImageView
-                android:id="@+id/imageView1552"
-                android:layout_width="wrap_content"
-                android:layout_height="@dimen/_13sdp"
-                android:layout_marginBottom="3dp"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:src="@drawable/arrow_right"
-                app:layout_constraintBottom_toBottomOf="@+id/textView612"
-                app:layout_constraintStart_toEndOf="@+id/textView612"
-                app:layout_constraintTop_toTopOf="@+id/textView612" />
-
-            <TextView
-                android:id="@+id/textView622"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/poppins"
-                android:text="@string/issue_your_name_body"
-                android:textSize="@dimen/_8ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/textView612"
-                app:layout_constraintTop_toBottomOf="@+id/textView612" />
-
-            <EditText
-                android:id="@+id/etYourName"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_7sdp"
-                android:background="@drawable/account_input_background"
-                android:ems="10"
-                android:fontFamily="@font/poppins"
-                android:hint="@string/issue_your_name_label"
-                android:inputType="text"
-                android:paddingHorizontal="@dimen/_15sdp"
-                android:paddingVertical="@dimen/_10sdp"
-                android:textSize="@dimen/_8ssp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView622" />
-
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvSubmitIssue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_45sdp"
                 app:cardBackgroundColor="@color/main_color"
                 app:cardCornerRadius="@dimen/_7sdp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/etYourName">
+                app:layout_constraintTop_toBottomOf="@+id/etIssueDesc">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
