@@ -18,6 +18,7 @@ import com.example.smart.R
 import com.example.smart.databinding.FragmentIssueInfoBinding
 import com.example.smart.models.FacilityInfoModel
 import com.example.smart.utils.Constants
+import com.example.smart.utils.Helper
 import com.example.smart.utils.LoadingDialogFragment
 import com.example.smart.utils.ShowInfoDialogFragment
 import com.google.firebase.auth.FirebaseAuth
@@ -69,6 +70,8 @@ class IssueInfoFragment : Fragment() {
             etTargetLab.setOnClickListener {
                 etTargetLab.showDropDown()
             }
+
+            tvRole.text = Helper.userRole.replaceFirstChar { if (it.isLowerCase()) it.titlecase() else it.toString() }
 
             cvSubmitIssue.setOnClickListener {
                 //  entry validations
