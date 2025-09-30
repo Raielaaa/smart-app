@@ -80,7 +80,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         fab.setOnClickListener {
-            if (Helper.userRole.lowercase() == "staff" || Helper.userRole.lowercase() == "officer") {
+            if (Helper.userRole.lowercase() == "staff" || Helper.userRole.lowercase() == "officers") {
                 val itemInfoBottomSheet = GuideBottomSheet()
                 itemInfoBottomSheet.show(supportFragmentManager, "guide_bottom_sheet")
             } else {

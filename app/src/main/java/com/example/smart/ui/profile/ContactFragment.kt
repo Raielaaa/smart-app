@@ -47,7 +47,7 @@ class ContactFragment : BottomSheetDialogFragment() {
     }
 
     private fun openEmail() {
-        val email = "ralphhonra@gmail.com"
+        val email = "miarealin24@gmail.com\n"
         val subject = Uri.encode("Inquiry")
         val body = Uri.encode("For any inquiries, please enter your message below before sending.")
         val uri = Uri.parse("mailto:$email?subject=$subject&body=$body")
@@ -61,7 +61,7 @@ class ContactFragment : BottomSheetDialogFragment() {
 
     private fun openMessage() {
         val intent = Intent(Intent.ACTION_SENDTO).apply {
-            data = Uri.parse("smsto:09701900391")
+            data = Uri.parse("smsto:09956623472")
             putExtra("sms_body", "For any inquiries, please enter your message below before sending.")
         }
         startActivity(intent)
@@ -69,7 +69,7 @@ class ContactFragment : BottomSheetDialogFragment() {
 
     private fun openCall() {
         val intent = Intent(Intent.ACTION_DIAL).apply {
-            data = Uri.parse("tel:09701900391")
+            data = Uri.parse("tel:09956623472")
         }
         startActivity(intent)
     }

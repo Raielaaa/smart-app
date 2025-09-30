@@ -236,7 +236,7 @@ class LoginFragment : Fragment() {
         }
 
         cvStudentOfficers.setOnClickListener {
-            Helper.userRole = "officer"
+            Helper.userRole = "officers"
             dialog.dismiss()
         }
 
